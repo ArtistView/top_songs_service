@@ -30,7 +30,7 @@ var addons = [
       songs[i].artistId = addons[i%100].artistId;
       songs[i].albumId = addons[i%100].albumId;
     }
-    return artists;
+    return songs;
   }
 
   addStuff(addons, mp3s, songs);
