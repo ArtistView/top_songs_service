@@ -1,12 +1,13 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 
 class TopFiveSongs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      songs = [];
-      isSongPlaying = false;
-      currentSong = null;
+      songs: [],
+      isSongPlaying: false,
+      currentSong: null
     }
   }
 
@@ -20,3 +21,6 @@ class TopFiveSongs extends React.Component {
     )
   }
 }
+ReactDom.render(<TopFiveSongs />, document.getElementById('app'))
+
+export default TopFiveSongs

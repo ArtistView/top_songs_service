@@ -2,11 +2,13 @@ const Express = require('express');
 const app = Express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const PORT = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(Express.static(path.join(__dirname, "../public")))
 
 app.get('/', (req, res) => {
   console.log('got a get');
