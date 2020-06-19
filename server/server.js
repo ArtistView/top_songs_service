@@ -10,10 +10,17 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(Express.static(path.join(__dirname, "../public")))
 
-app.get('/', (req, res) => {
-  console.log('got a get');
-  res.end();
-})
+//const db = require('../../albums_service/database/db.js');
+
+//Promise.promisifyAll(require('mongoose'));
+
+// app.get('/songs', (req, res) => {
+//   db.Song.find()
+//     .then((data) => {
+//       res.send(data)
+//     })
+//   res.end();
+// })
 
 app.listen(PORT, (req, res) => {
   console.log('I am listening on 3000');
