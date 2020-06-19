@@ -74,7 +74,7 @@ class TopFiveSongs extends React.Component {
   render() {
     return (
       <div>
-        <header>Popular</header>
+        <h3>Popular</h3>
         <div>
           <TopSongs songs={this.state.songs} />
         </div>
