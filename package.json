@@ -28,10 +28,13 @@
     "cors": "^2.8.5",
     "cypress": "^4.8.0",
     "express": "^4.17.1",
+    "feather-icons": "^4.28.0",
     "mongodb": "^3.5.9",
+    "mongoose": "^5.9.19",
     "morgan": "^1.10.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Monserrat', 'Arial';
+}
+
+header {
+  font-weight: 550;
+  font-size: 25px;
+}

@@ -10,8 +10,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(Express.static(path.join(__dirname, "../public")))
 
-app.get('/', (req, res) => {
-  console.log('got a get');
+//const db = require('../../albums_service/database/db.js');
+
+//Promise.promisifyAll(require('mongoose'));
+
+app.get('/songs/:songId', (req, res) => {
+  var id = req.params.songId
+  db.Song.find({_id: id})
+    .then((data) => {
+      res.send(data)
+    })
   res.end();
 })
 
