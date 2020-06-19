@@ -11,9 +11,10 @@ class Song extends React.Component {
 
   render () {
     return (
-      <li>
+      <div>
+        <i data-feather="volume-2"></i>
         <span>{this.props.song.title}</span>
-      </li>
+      </div>
     )
   }
 
