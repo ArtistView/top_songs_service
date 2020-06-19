@@ -60,8 +60,10 @@ class TopFiveSongs extends React.Component {
     }
   }
 
-  componentDidMount() {
-  }
+  // componentDidMount() {
+  //   fetch('/')
+  //     .then()
+  // }
 
   render() {
     return (

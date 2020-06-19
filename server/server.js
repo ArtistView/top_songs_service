@@ -14,13 +14,14 @@ app.use(Express.static(path.join(__dirname, "../public")))
 
 //Promise.promisifyAll(require('mongoose'));
 
-// app.get('/songs', (req, res) => {
-//   db.Song.find()
-//     .then((data) => {
-//       res.send(data)
-//     })
-//   res.end();
-// })
+app.get('/songs/:songId', (req, res) => {
+  var id = req.params.songId
+  db.Song.find({_id: id})
+    .then((data) => {
+      res.send(data)
+    })
+  res.end();
+})
 
 app.listen(PORT, (req, res) => {
   console.log('I am listening on 3000');
