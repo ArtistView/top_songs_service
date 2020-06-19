@@ -1,10 +1,14 @@
 body {
-  background-color: black;
+  background-color: #080808;
   color: white;
   font-family: 'Monserrat', 'Arial';
 }
 
-header {
+.h3 {
   font-weight: 550;
   font-size: 25px;
+}
+
+.songSelected {
+  background-color: #181818;
 }
