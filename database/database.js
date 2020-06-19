@@ -6,7 +6,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
   // we're connected!
-  console.log('on Lisa!');
+  console.log('connected to DB!');
 });
 
 const artistSchema = new mongoose.Schema({
@@ -40,6 +40,7 @@ const songSchema = new mongoose.Schema({
 });
 const Song = mongoose.model('Song', songSchema);
 
+//gets the top 5 songs by listens
 const getTopFive = function() {
   var songs = Song.find()
   songs.sort({listens: 'desc'})

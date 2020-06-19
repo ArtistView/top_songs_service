@@ -24,6 +24,7 @@ app.get('/songs/:songId', (req, res) => {
     })
 })
 
+//gets the top five songs by listens
 app.get('/songs', (req, res) => {
   console.log('I got a get for top 5');
   db.getTopFive()
