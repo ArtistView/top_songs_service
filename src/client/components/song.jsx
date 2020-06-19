@@ -11,33 +11,35 @@ class Song extends React.Component {
       songIsSelected: false
     }
     //console.log(this.props)
+    this.selectSong = this.selectSong.bind(this);
+    this.playSong = this.playSong.bind(this);
   }
 
   selectSong() {
-    this.setState({
+    this.setState(e => ({
       songIsSelected: true
-    });
+    }));
   }
 
   playSong() {
-    this.setState({
+    this.setState(e => ({
       isPlaying: true
-    });
+    }));
   }
 
   render () {
     if (this.state.songIsSelected)  {
     return (
-      <div class="songSelected">
+      <div className="songSelected">
         <span>
-          <a onClick={playSong}><BsPlayFill /></a>
+          <a onClick={this.playSong}><BsPlayFill /></a>
           {this.props.song.title}
 
         </span>
       </div>
-    )} else {
+    )} else if (!this.state.songIsSelected) {
       return (
-        <div><a class="topSong" onClick={selectSong}>
+        <div><a className="topSong" onClick={this.selectSong}>
           <span><RiMusicLine />{this.props.song.title}</span>
         </a></div>
       )
