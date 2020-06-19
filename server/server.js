@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 app.use(Express.static(path.join(__dirname, "../public")))
 
 //const db = require('../../albums_service/database/db.js');
-
 //Promise.promisifyAll(require('mongoose'));
 
+//get route for requests coming in, with songId
 app.get('/songs/:songId', (req, res) => {
   var id = req.params.songId
   db.Song.find({_id: id})

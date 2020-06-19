@@ -1,5 +1,7 @@
 import React from 'react';
+import {BsMusicNote} from 'react-icons/bs'
 
+//Takes in a song object, and renders all components of that song
 class Song extends React.Component {
   constructor(props) {
     super(props);
@@ -12,8 +14,8 @@ class Song extends React.Component {
   render () {
     return (
       <div>
-        <i data-feather="volume-2"></i>
-        <span>{this.props.song.title}</span>
+
+        <span><BsMusicNote />{this.props.song.title}</span>
       </div>
     )
   }

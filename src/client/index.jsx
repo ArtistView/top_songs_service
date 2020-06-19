@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import TopSongs from './components/topSongs.jsx';
 
+//songs array as a test until server working
 var songs = [
   {
     "title": "Nunc mauris",
@@ -50,12 +51,16 @@ var songs = [
   }
 ]
 
+//main component rendered to DOM
 class TopFiveSongs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      //an array of songs, currently referencing above array
       songs: songs,
+      //boolean for whether or not a song is currently being played
       isSongPlaying: false,
+      //will reference the Id of the song currently playing
       currentSong: null
     }
   }
@@ -65,6 +70,7 @@ class TopFiveSongs extends React.Component {
   //     .then()
   // }
 
+  //places a popular header on div, and calls TopSongs with the whole array
   render() {
     return (
       <div>
@@ -76,6 +82,8 @@ class TopFiveSongs extends React.Component {
     )
   }
 }
+
+
 ReactDom.render(<TopFiveSongs />, document.getElementById('app'))
 
 export default TopFiveSongs
