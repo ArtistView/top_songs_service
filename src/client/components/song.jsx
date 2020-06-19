@@ -1,6 +1,7 @@
 import React from 'react';
 import {BsMusicNote} from 'react-icons/bs'
 
+//Takes in a song object, and renders all components of that song
 class Song extends React.Component {
   constructor(props) {
     super(props);
