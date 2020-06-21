@@ -1,50 +1,47 @@
 import React from 'react';
-import {RiMusicLine} from 'react-icons/ri';
-import {RiVolumeUpLine} from 'react-icons/ri';
-import {BsPlayFill} from 'react-icons/bs';
+import { RiMusicLine } from 'react-icons/ri';
+import { RiVolumeUpLine } from 'react-icons/ri';
+import { BsPlayFill } from 'react-icons/bs';
+import { BsPause } from 'react-icons/bs';
 //Takes in a song object, and renders all components of that song
-class Song extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isPlaying: false,
-      songIsSelected: false
-    }
-    //console.log(this.props)
-    this.selectSong = this.selectSong.bind(this);
-    this.playSong = this.playSong.bind(this);
-  }
 
-  selectSong() {
-    this.setState(e => ({
-      songIsSelected: true
-    }));
-  }
+const Song = (props) => {
+  //console.log(props)
+  var song = props.song
 
-  playSong() {
-    this.setState(e => ({
-      isPlaying: true
-    }));
-  }
+  //rewrite these if statements. Find a way to clean them up
 
-  render () {
-    if (this.state.songIsSelected)  {
+  //if this is the playing song, and it's unpaused
+  if (props.songIsPlaying && !props.songIsPaused && song._id === props.playingSong) {
     return (
       <div className="songSelected">
         <span>
-          <a onClick={this.playSong}><BsPlayFill /></a>
-          {this.props.song.title}
-
+          <a onClick={props.playSong}>
+            <RiVolumeUpLine /></a>
+          {props.song.title}
         </span>
       </div>
-    )} else if (!this.state.songIsSelected) {
-      return (
-        <div><a className="topSong" onClick={this.selectSong}>
-          <span><RiMusicLine />{this.props.song.title}</span>
-        </a></div>
-      )
-    }
+    )
+  } else if (!props.songIsSelected && !props.songIsPlaying) {
+    //if no song is selected and no song is playing
+    return (
+      <div>
+        <span><RiMusicLine />{props.song.title}</span>
+      </div>
+    )
+  } else if (props.songIsSelected && props.selectedSong === song._id) {
+    return (
+      <div>
+        <span><BsPlayFill />{props.song.title}</span>
+      </div>
+    )
   }
+  return (
+    <div>
+      <span><RiMusicLine />{props.song.title}</span>
+    </div>
+  )
+
 
 }
 

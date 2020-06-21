@@ -1,14 +1,14 @@
 body {
-  background-color: #080808;
+  background-color: #202020;
   color: white;
   font-family: 'proxima-nova', 'Monserrat', 'Arial';
 }
 
 .h3 {
-  font-weight: 550;
+  font-weight: 500;
   font-size: 25px;
 }
 
 .songSelected {
-  background-color: #181818;
+  background-color: #303030;
 }
