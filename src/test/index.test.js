@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Main from '../../client/index.jsx';
+import renderer from 'react-test-renderer';
+
+import Enzyme, { shallow, render, mount } from 'enzyme';
+import Index from '../client/index.jsx';
 
 describe("Index", () => {
-  it ('should be true', () => {
-    const foo = true;
-    expect(foo).toBe(true);
-  })
-  it ('should be false', () => {
-    const foo = false;
-    expect(foo).toBe(false);
-  })
+  test('Main component renders', () => {
+    const wrapper = shallow(<TopFiveSongs />)
+    expect(wrapper.find('h3').text()).toContain("Popular")
+  });
+
 })

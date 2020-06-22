@@ -1,14 +1,56 @@
 body {
-  background-color: #080808;
+  background-color: #202020;
   color: white;
-  font-family: 'Monserrat', 'Arial';
+  font-family: 'proxima-nova', 'Monserrat', 'Arial';
 }
 
 .h3 {
-  font-weight: 550;
+  font-weight: 500;
   font-size: 25px;
 }
 
-.songSelected {
-  background-color: #181818;
+.songWrapper {
+  line-height: 20px;
+  list-style-type: none;
+  font-size: 14px;
+  color: #b3b3b3;
 }
+
+
+.songSelected {
+  background-color: #303030;
+}
+
+.songPlaying {
+  color: green;
+}
+
+.song {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.icon {
+  display: inline-block;
+  text-align: center;
+}
+.songImage {
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.songTitle {
+  display: inline-block;
+  text-align: center;
+  text-align: left;
+  margin-left: 5px;
+}
+.duration {
+  display: inline-block;
+  float: right;
+}
+
+.showOptions {
+  display: inline-block;
+}
+
