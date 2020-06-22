@@ -14,7 +14,6 @@ class TopSong extends React.Component {
     this.changeSelectedSong = this.changeSelectedSong.bind(this);
     this.playSong = this.playSong.bind(this);
     this.pauseSong = this.pauseSong.bind(this);
-    this.showOptions = this.showOptions.bind(this);
 
   }
 
@@ -39,10 +38,6 @@ class TopSong extends React.Component {
     }))
   }
 
-  showOptions() {
-    //show options for adding song to queue, etc.
-  }
-
 
   render () {
     return (
@@ -60,7 +55,6 @@ class TopSong extends React.Component {
               selectedSong={this.state.selectedSong}
               playSong={this.playSong}
               pauseSong={this.pauseSong}
-              showOptions={this.showOptions}
             /></span>
           )
         })}
