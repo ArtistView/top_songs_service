@@ -6,25 +6,37 @@ import { BsPause } from 'react-icons/bs';
 //Takes in a song object, and renders all components of that song
 
 const Song = (props) => {
-  //console.log(props)
+  console.log(props)
   var song = props.song
+
+  //calculate the duration (database stores as seconds)
+  var seconds = (song.duration) % 60
+  if (seconds < 10) { seconds = '0' + seconds }
+  var minutes = Math.floor(song.duration / 60)
+  let duration = minutes + ":" + seconds;
+
 
   //if this is the playing song
   if (song._id === props.playingSong) {
     //if this song is selected
-    if (song._id === props.selectedSong) {
+    if (props.hover || song._id === props.selectedSong) {
       //playing, selected, song is not paused
       //on click, pause the song
       //icon is pause
       if (!props.songIsPaused) {
         return (
-          <div className="songSelected notPaused songPlaying">
+          <li className="song songSelected notPaused songPlaying">
             <span>
-              <a onClick={((e) => props.pauseSong(e, song._id))}>
+              <a className="icon"
+              onClick={((e) => props.pauseSong(e, song._id))}>
                 <BsPause /></a>
-              {props.song.title}
+              <div className="songImage"> IMG </div>
+              <div className="songTitle">
+                {props.song.title}</div>
+              <div className="showOptions" onClick={props.showOptions}>...</div>
+              <div className="duration">{duration}</div>
             </span>
-          </div>
+          </li>
         )
       }
       //playing, selected, song is paused
@@ -32,13 +44,18 @@ const Song = (props) => {
       //icon is play button
       if (props.songIsPaused) {
         return (
-          <div className="songSelected paused songPlaying">
+          <li className="song songSelected paused songPlaying">
             <span>
-            <a onClick={((e) => props.playSong(e, song._id))}>
+              <a className="icon"
+                onClick={((e) => props.playSong(e, song._id))}>
                 <BsPlayFill /></a>
-              {props.song.title}
+              <div className="songImage"> IMG </div>
+              <div className="songTitle">
+                {props.song.title}</div>
+              <div className="showOptions" onClick={props.showOptions}>...</div>
+              <div className="duration">{duration}</div>
             </span>
-          </div>
+          </li>
         )
       }
     }
@@ -47,26 +64,34 @@ const Song = (props) => {
     //icon is the speaker/volume button
     if (!props.songIsPaused) {
       return (
-        <div className="notPaused songPlaying">
+        <li className="song notPaused songPlaying">
           <span>
-          <a onClick={((e) => props.pauseSong(e, song._id))}>
+            <a className="icon"
+              onClick={((e) => props.pauseSong(e, song._id))}>
               <RiVolumeUpLine /></a>
-            {props.song.title}
+            <div className="songImage"> IMG </div>
+            <div className="songTitle">
+              {props.song.title}</div>
+            <div className="duration">{duration}</div>
           </span>
-        </div>
+        </li>
       )
     } else {
-    //if not selected, this song is playing, but song is paused
-    //on click, play the song
-    //icon is music note
+      //if not selected, this song is playing, but song is paused
+      //on click, play the song
+      //icon is music note
       return (
-        <div className="songSelected paused songPlaying">
+        <li className="song paused songPlaying">
           <span>
-          <a onClick={((e) => props.playSong(e, song._id))}>
+            <a className="icon"
+              onClick={((e) => props.playSong(e, song._id))}>
               <RiMusicLine /></a>
-            {props.song.title}
+            <div className="songImage"> IMG </div>
+            <div className="songTitle">
+              {props.song.title}</div>
+            <div className="duration">{duration}</div>
           </span>
-        </div>
+        </li>
       )
     }
   } else if (song._id !== props.playingSong) {
@@ -75,28 +100,37 @@ const Song = (props) => {
     //not playing, song is selected
     //on click play the song
     //icon is play button
-    if (song._id === props.selectedSong) {
+    if (props.hover || song._id === props.selectedSong) {
       return (
-        <div className="songSelected normalSong">
+        <li className="song songSelected normalSong">
           <span>
-          <a onClick={((e) => props.playSong(e, song._id))}>
+            <a className="icon"
+              onClick={((e) => props.playSong(e, song._id))}>
               <BsPlayFill /></a>
-            {props.song.title}
+            <div className="songImage"> IMG </div>
+            <div className="songTitle">
+              {props.song.title}</div>
+            <div className="showOptions" onClick={props.showOptions}>...</div>
+            <div className="duration">{duration}</div>
           </span>
-        </div>
+        </li>
       )
     }
     //not playing, not selected, all else
     //on click, play song
     //icon is music note
     return (
-      <div className="normalSong">
+      <li className="song normalSong">
         <span>
-        <a onClick={((e) => props.playSong(e, song._id))}>
+          <a className="icon"
+            onClick={((e) => props.playSong(e, song._id))}>
             <RiMusicLine /></a>
-          {props.song.title}
+          <div className="songImage"> IMG </div>
+          <div className="songTitle">
+            {props.song.title}</div>
+          <div className="duration">{duration}</div>
         </span>
-      </div>
+      </li>
     )
   }
 
