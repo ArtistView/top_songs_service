@@ -9,14 +9,13 @@ class TopSong extends React.Component {
     this.state = {
       playingSong: null,
       selectedSong: null,
-      songIsPaused: true,
-      hover: false
+      songIsPaused: true
     }
     this.changeSelectedSong = this.changeSelectedSong.bind(this);
     this.playSong = this.playSong.bind(this);
     this.pauseSong = this.pauseSong.bind(this);
     this.showOptions = this.showOptions.bind(this);
-    this.toggleHover = this.toggleHover.bind(this);
+
   }
 
   //function called when a song is clicked
@@ -44,13 +43,6 @@ class TopSong extends React.Component {
     //show options for adding song to queue, etc.
   }
 
-  //function that changes state based on mouse enter/leave
-  toggleHover() {
-    this.setState({
-      hover: !this.state.hover
-    })
-  }
-
 
   render () {
     return (
@@ -66,11 +58,9 @@ class TopSong extends React.Component {
               playingSong={this.state.playingSong}
               songIsPaused={this.state.songIsPaused}
               selectedSong={this.state.selectedSong}
-              hover={this.state.hover}
               playSong={this.playSong}
               pauseSong={this.pauseSong}
               showOptions={this.showOptions}
-              toggleHover={this.toggleHover}
             /></span>
           )
         })}
