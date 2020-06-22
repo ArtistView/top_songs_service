@@ -1,7 +1,7 @@
 import React from 'react';
 import Song from './song.jsx';
 
-//takes in an array of songs, maps through them and calls sons for each one
+//takes in an array of songs, maps through them and calls song for each one
 class TopSong extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class TopSong extends React.Component {
     //console.log('I got clicked!', id)
     this.setState(() => ({
       songIsSelected: true,
-      selectedSong: id //update this based on target
+      selectedSong: id
     }))
   }
   //function that is called when the play button is clicked
@@ -31,7 +31,7 @@ class TopSong extends React.Component {
     this.setState((e, id) => ({
       songIsPlaying: true,
       songIsPaused: false,
-      playingSong: id //update this based on target
+      playingSong: id
     }))
   }
 
