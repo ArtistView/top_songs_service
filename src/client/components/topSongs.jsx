@@ -11,11 +11,12 @@ class TopSong extends React.Component {
       playingSong: null,
       songIsSelected: false,
       selectedSong: null,
-      songIsPaused: false
+      songIsPaused: true
 
     }
     this.changeSelectedSong = this.changeSelectedSong.bind(this);
     this.playSong = this.playSong.bind(this);
+    this.pauseSong = this.pauseSong.bind(this);
   }
 
   //function called when a song is clicked
@@ -27,11 +28,17 @@ class TopSong extends React.Component {
     }))
   }
   //function that is called when the play button is clicked
-  playSong() {
-    this.setState((e, id) => ({
+  playSong(e, id) {
+    this.setState(() => ({
       songIsPlaying: true,
       songIsPaused: false,
       playingSong: id
+    }))
+  }
+  //function that is called to toggle to paused state
+  pauseSong(e, id) {
+    this.setState(() => ({
+      songIsPaused: true
     }))
   }
 
@@ -40,7 +47,7 @@ class TopSong extends React.Component {
       <ul>
         {this.props.songs.map(song => {
           return (
-            <a onClick={((e) => this.changeSelectedSong(e, song._id))}>
+            <span onClick={((e) => this.changeSelectedSong(e, song._id))}>
             <Song
               song={song}
               songIsPlaying={this.state.songIsPlaying}
@@ -49,7 +56,8 @@ class TopSong extends React.Component {
               songIsPaused={this.state.songIsPaused}
               selectedSong={this.state.selectedSong}
               playSong={this.playSong}
-            /></a>
+              pauseSong={this.pauseSong}
+            /></span>
           )
         })}
       </ul>
