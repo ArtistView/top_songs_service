@@ -53,6 +53,7 @@ class TopSong extends React.Component {
               playingSong={this.state.playingSong}
               songIsPaused={this.state.songIsPaused}
               selectedSong={this.state.selectedSong}
+              changeSelectedSong={this.changeSelectedSong}
               playSong={this.playSong}
               pauseSong={this.pauseSong}
             /></span>
