@@ -8,6 +8,14 @@ body {
   font-weight: 500;
   font-size: 25px;
 }
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  color: #b3b3b3;
+  background-color: #303030;
+}
 
 .songWrapper {
   line-height: 20px;
@@ -51,7 +59,28 @@ body {
   float: right;
 }
 
-.showOptions {
+.options {
   display: inline-block;
+  color: #b3b3b3;
 }
+.menu {
+  margin: 2px 0 0;
+  padding: 5px 0;
+  background-color: #282828;
+}
+.menu-item {
+  font-size: 12px;
+  opacity: 1;
+  min-width: 120px;
+  padding: 3px 20px;
+  line-height: 20px;
+}
+.menu-item:hover {
+  background-color: #303030
+}
+
+#show-options {
+  background-color: #282828;
+}
+
 

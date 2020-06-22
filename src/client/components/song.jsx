@@ -3,13 +3,14 @@ import { RiMusicLine } from 'react-icons/ri';
 import { RiVolumeUpLine } from 'react-icons/ri';
 import { BsPlayFill } from 'react-icons/bs';
 import { BsPause } from 'react-icons/bs';
+import ShowOptions from './showOptions.jsx';
 //Takes in a song object, and renders all components of that song
 
 class Song extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false
+      hover: false,
     }
     this.toggleHover = this.toggleHover.bind(this);
   }
@@ -33,11 +34,12 @@ class Song extends React.Component {
   render () {
     //if this is the playing song
     if (this.props.song._id === this.props.playingSong) {
-      //if this song is selected
+      //if this song is selected or hovered over
       if (this.state.hover || this.props.song._id === this.props.selectedSong) {
         //playing, selected, song is not paused
         //on click, pause the song
         //icon is pause
+        //show options
         if (!this.props.songIsPaused) {
           return (
             <li className="song songSelected notPaused songPlaying">
@@ -50,7 +52,7 @@ class Song extends React.Component {
                 <div className="songImage"> IMG </div>
                 <div className="songTitle">
                   {this.props.song.title}</div>
-                <div className="showOptions" onClick={this.props.showOptions}>...</div>
+                <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
                 <div className="duration">{this.duration()}</div>
               </span>
             </li>
@@ -59,6 +61,7 @@ class Song extends React.Component {
         //playing, selected, song is paused
         //on click, play song
         //icon is play button
+        //show options
         if (this.props.songIsPaused) {
           return (
             <li className="song songSelected paused songPlaying">
@@ -71,7 +74,7 @@ class Song extends React.Component {
                 <div className="songImage"> IMG </div>
                 <div className="songTitle">
                   {this.props.song.title}</div>
-                <div className="showOptions" onClick={this.props.showOptions}>...</div>
+                <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
                 <div className="duration">{this.duration()}</div>
               </span>
             </li>
@@ -120,9 +123,10 @@ class Song extends React.Component {
     } else if (this.props.song._id !== this.props.playingSong) {
       //if song is not playing
 
-      //not playing, song is selected
+      //not playing, song is selected or hovered
       //on click play the song
       //icon is play button
+      //include show options
       if (this.state.hover || this.props.song._id === this.props.selectedSong) {
         return (
           <li className="song songSelected">
@@ -135,7 +139,7 @@ class Song extends React.Component {
               <div className="songImage"> IMG </div>
               <div className="songTitle">
                 {this.props.song.title}</div>
-              <div className="showOptions" onClick={this.props.showOptions}>...</div>
+              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
               <div className="duration">{this.duration()}</div>
             </span>
           </li>
