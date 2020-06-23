@@ -42,11 +42,29 @@ const Song = mongoose.model('Song', songSchema);
 
 //gets the top 5 songs by listens
 const getTopFive = function() {
-  var songs = Song.find()
-  songs.sort({listens: 'desc'})
-  songs.limit(5)
-  return songs
+  var songs = Song.find();
+  songs.sort({listens: 'desc'});
+  songs.limit(5);
+  //songs = getImages(songs);
+  return songs;
 }
+
+// const getImages = function(songs) {
+//   console.log('get a request for images', songs)
+//   songs.forEach(function(song) {
+//     var image = getAlbumImage(song);
+//     song.imageUrl = image.imageUrl
+//   })
+//   return songs;
+// }
+
+// const getAlbumImage = function(id) {
+//   var query = Album.findById({ id });
+//   query.exec(function (err, album) {
+//     if (err) {console.log(err)};
+//     return album;
+//   })
+// }
 
 module.exports = {
   Artist: Artist,

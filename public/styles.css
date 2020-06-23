@@ -2,6 +2,7 @@ body {
   background-color: #151515;
   color: white;
   font-family: 'proxima-nova', 'Monserrat', 'Arial';
+  margin: 0;
 }
 
 .h3 {
@@ -22,7 +23,9 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
   background-image: url("https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/viacom-SpongeBob-Sea6-Full-Image_GalleryBackground-en-us-1564718608647._SX1080_.jpg");
-  background-size: 700px auto;
+  background-size: 100%;
+  background-repeat: no-repeat ;
+  background-position-y: 15%;
   margin: 0;
 }
 .topBar {
@@ -179,28 +182,37 @@ header {
 .icon {
   display: inline-block;
   text-align: center;
+  vertical-align: middle;
+  width: 3%;
 }
 .songImage {
   display: inline-block;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 30px;
+  width: 33px;
+  vertical-align: middle;
 }
 .songTitle {
   display: inline-block;
-  text-align: center;
   text-align: left;
   margin-left: 5px;
-  width: 250px;
+  vertical-align: middle;
+  width: 75%;
 }
 .duration {
-  display: inline-block;
+  display: block;
   float: right;
+  margin-right: 20px;
+  width: 10;
 }
 .song-ellipsis {
   padding-left: 5px;
+  font-size: 10px;
   font-family: 'Courier New', Courier, monospace;
-  text-align: top;
   letter-spacing: -.2em;
+  float: right;
+  width: 7%;
 }
 .options {
   display: inline-block;
