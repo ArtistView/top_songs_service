@@ -1,5 +1,5 @@
 body {
-  background-color: #202020;
+  background-color: #151515;
   color: white;
   font-family: 'proxima-nova', 'Monserrat', 'Arial';
 }
@@ -17,6 +17,144 @@ button {
   background-color: #303030;
 }
 
+header {
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: url("https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/viacom-SpongeBob-Sea6-Full-Image_GalleryBackground-en-us-1564718608647._SX1080_.jpg");
+  background-size: 700px auto;
+  margin: 0;
+}
+.topBar {
+  padding-bottom: 80px;
+}
+.previous {
+  border-radius: 50%;
+  width: 22px;
+  height: 23px;
+  font-size: 22px;
+  margin-right: 8px;
+  font-weight: 300;
+}
+.next {
+  border-radius: 50%;
+  width: 22px;
+  height: 23px;
+  font-size: 22px;
+  margin-left: 8px;
+  opacity: 0.6;
+  font-weight: 300;
+}
+.user {
+  text-align: center;
+  width: 22px;
+  height: 23px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 50%;
+  border: 1px solid black;
+  float: right;
+}
+.verified {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  vertical-align: center;
+  letter-spacing: .1em;
+}
+.checkmark {
+  width: 20px;
+  vertical-align: baseline;
+}
+.artist-name {
+  font-size: 60px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.monthly {
+  font-size: 12px;
+  font-weight: 400;
+  padding-bottom: 30px;
+}
+
+.play-btn {
+  text-align: center;
+  background: url("https://fakespotify.s3-us-west-1.amazonaws.com/spotify-play.png") no-repeat;
+  background-size: 45px auto;
+  padding: 30px;
+  margin-top: 15px;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+.follow-btn {
+  padding: 5px;
+  background-color: #151515;
+  border: 1px solid darkgrey;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: .1em;
+  border-radius: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 10px;
+}
+.follow-btn:hover {
+  border: 1px solid white;
+}
+.ellipsis {
+  font-size: 20px;
+  padding-left: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: top;
+  letter-spacing: -.2em;
+}
+
+.second-row-options {
+  padding-left: 25px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 11px;
+}
+
+.overview-btn {
+  color: white;
+  margin-right: 3px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.related-btn {
+  background-color: #151515;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: 530;
+}
+
+.about-btn {
+  background-color: #151515;
+  margin-left: 3px;
+  margin-right: 3px;
+  color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: 530;
+}
+
+.popular {
+  margin-left: 25px;
+}
 .songWrapper {
   line-height: 20px;
   list-style-type: none;
@@ -58,10 +196,16 @@ button {
   display: inline-block;
   float: right;
 }
-
+.song-ellipsis {
+  padding-left: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: top;
+  letter-spacing: -.2em;
+}
 .options {
   display: inline-block;
   color: #b3b3b3;
+  margin-left: 15px;
 }
 .menu {
   margin: 2px 0 0;
@@ -76,7 +220,8 @@ button {
   line-height: 20px;
 }
 .menu-item:hover {
-  background-color: #303030
+  background-color: #303030;
+  color: white;
 }
 
 #show-options {

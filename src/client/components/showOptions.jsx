@@ -6,7 +6,7 @@ const ShowOptions = () => {
   return (
     <div className="options">
       <ContextMenuTrigger id="show-options" holdToDisplay={1}>
-        <div>...</div>
+        <div className="song-ellipsis">...</div>
       </ContextMenuTrigger>
 
       <ContextMenu id="show-options" className="menu" rtl>

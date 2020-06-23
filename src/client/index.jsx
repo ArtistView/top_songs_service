@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import TopSongs from './components/topSongs.jsx';
-
+import App from './app.jsx'
 
 //main component rendered to DOM
 class TopFiveSongs extends React.Component {
@@ -30,7 +30,7 @@ class TopFiveSongs extends React.Component {
     if (this.state.isLoaded) {
       return (
         <div>
-          <h3>Popular</h3>
+          <h3 className="popular">Popular</h3>
           <div>
             <TopSongs songs={this.state.songs} />
           </div>
@@ -46,7 +46,7 @@ class TopFiveSongs extends React.Component {
   }
 }
 
-
-ReactDom.render(<TopFiveSongs />, document.getElementById('app'))
+ReactDom.render(<App />, document.getElementById('app'))
+ReactDom.render(<TopFiveSongs />, document.getElementById('topFiveSongs'))
 
 export default TopFiveSongs
