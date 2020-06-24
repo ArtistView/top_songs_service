@@ -18,6 +18,7 @@ class TopFiveSongs extends React.Component {
     fetch('/songs')
       .then (res => res.json())
       .then(songs => {
+        console.log(songs);
         this.setState({
           songs: songs,
           isLoaded: true

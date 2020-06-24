@@ -11,6 +11,7 @@ class Song extends React.Component {
     super(props);
     this.state = {
       hover: false,
+      image: "https://tinyurl.com/ya65klnb"
     }
     this.toggleHover = this.toggleHover.bind(this);
   }
@@ -49,7 +50,7 @@ class Song extends React.Component {
                 <a className="icon"
                 onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
                   <BsPause /></a>
-                <div className="songImage"> IMG </div>
+                  <img className="songImage" src={this.state.image} />
                 <div className="songTitle">
                   {this.props.song.title}</div>
                 <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
@@ -71,7 +72,7 @@ class Song extends React.Component {
                 <a className="icon"
                   onClick={((e) => this.props.playSong(e, this.props.song._id))}>
                   <BsPlayFill /></a>
-                <div className="songImage"> IMG </div>
+                <img className="songImage" src={this.state.image} />
                 <div className="songTitle">
                   {this.props.song.title}</div>
                 <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
@@ -93,7 +94,7 @@ class Song extends React.Component {
               <a className="icon"
                 onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
                 <RiVolumeUpLine /></a>
-              <div className="songImage"> IMG </div>
+                <img className="songImage" src={this.state.image} />
               <div className="songTitle">
                 {this.props.song.title}</div>
               <div className="duration">{this.duration()}</div>
@@ -112,7 +113,7 @@ class Song extends React.Component {
               <a className="icon"
                 onClick={((e) => this.props.playSong(e, this.props.song._id))}>
                 <RiMusicLine /></a>
-              <div className="songImage"> IMG </div>
+                <img className="songImage" src={this.state.image} />
               <div className="songTitle">
                 {this.props.song.title}</div>
               <div className="duration">{this.duration()}</div>
@@ -136,7 +137,7 @@ class Song extends React.Component {
               <a className="icon"
                 onClick={((e) => this.props.playSong(e, this.props.song._id))}>
                 <BsPlayFill /></a>
-              <div className="songImage"> IMG </div>
+                <img className="songImage" src={this.state.image} />
               <div className="songTitle">
                 {this.props.song.title}</div>
               <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
@@ -156,7 +157,7 @@ class Song extends React.Component {
             <a className="icon"
               onClick={((e) => this.props.playSong(e, this.props.song._id))}>
               <RiMusicLine /></a>
-            <div className="songImage"> IMG </div>
+              <img className="songImage" src={this.state.image} />
             <div className="songTitle">
               {this.props.song.title}</div>
             <div className="duration">{this.duration()}</div>
