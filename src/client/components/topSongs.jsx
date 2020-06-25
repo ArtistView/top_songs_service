@@ -1,6 +1,7 @@
 import React from 'react';
 import Song from './song.jsx';
 import styled, { css } from 'styled-components';
+import Promise from 'bluebird'
 
 const SongWrapper = styled.span`
   display: block;
@@ -20,33 +21,45 @@ class TopSong extends React.Component {
     this.state = {
       playingSong: null,
       selectedSong: null,
-      songIsPaused: true
+      songIsPaused: true,
+      audiofile: null
     }
     this.changeSelectedSong = this.changeSelectedSong.bind(this);
     this.playSong = this.playSong.bind(this);
     this.pauseSong = this.pauseSong.bind(this);
-
+    if (this.state.audiofile) {
+      this.audio = new Audio(this.state.audiofile)
+    }
   }
 
   //function called when a song is clicked
-  changeSelectedSong(e, id) {
+  changeSelectedSong(e, song) {
     //console.log('I got clicked!', id)
     this.setState(() => ({
-      selectedSong: id
+      selectedSong: song._id
     }))
   }
   //function that is called when the play button is clicked
-  playSong(e, id) {
-    this.setState(() => ({
+  playSong(e, song) {
+    //if there is currently a song playing
+    if (song._id !== this.state.playingSong && !this.state.songIsPaused) {
+      this.audio.pause();
+    }
+    this.setState({
       songIsPaused: false,
-      playingSong: id
-    }))
+      playingSong: song._id,
+      audiofile: song.mp3
+    }, () => {
+      this.audio = new Audio(this.state.audiofile);
+      this.audio.play();
+    })
   }
   //function that is called to toggle to paused state
   pauseSong() {
     this.setState(() => ({
       songIsPaused: true
     }))
+    this.audio.pause();
   }
 
 

@@ -71,7 +71,6 @@ class Song extends React.Component {
     }
     this.toggleHover = this.toggleHover.bind(this);
 
-
   }
   //when mouse over, toggle the hover function to rerender state
   toggleHover() {
@@ -107,14 +106,14 @@ class Song extends React.Component {
               onMouseEnter={this.toggleHover}
               onMouseLeave={this.toggleHover}>
               <StyledIcon
-                onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
+                onClick={((e) => this.props.pauseSong(e, this.props.song))}>
                 <BsPause />
               </StyledIcon>
               <StyledImage src={this.state.image} />
               <StyledTitle>
                 {this.props.song.title}
               </StyledTitle>
-              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))} />
+              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song))} />
               <StyledDuration>
                 {this.duration()}
               </StyledDuration>
@@ -131,14 +130,14 @@ class Song extends React.Component {
               onMouseEnter={this.toggleHover}
               onMouseLeave={this.toggleHover}>
               <StyledIcon
-                onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+                onClick={((e) => this.props.playSong(e, this.props.song))}>
                 <BsPlayFill />
               </StyledIcon>
               <StyledImage src={this.state.image} />
               <StyledTitle>
                 {this.props.song.title}
               </StyledTitle>
-              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))} />
+              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song))} />
               <StyledDuration>
                 {this.duration()}
               </StyledDuration>
@@ -155,7 +154,7 @@ class Song extends React.Component {
             onMouseEnter={this.toggleHover}
             onMouseLeave={this.toggleHover}>
             <StyledIcon
-              onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
+              onClick={((e) => this.props.pauseSong(e, this.props.song))}>
               <RiVolumeUpLine />
             </StyledIcon>
             <StyledImage src={this.state.image} />
@@ -176,7 +175,7 @@ class Song extends React.Component {
             onMouseEnter={this.toggleHover}
             onMouseLeave={this.toggleHover}>
             <StyledIcon
-              onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+              onClick={((e) => this.props.playSong(e, this.props.song))}>
               <RiMusicLine />
             </StyledIcon>
             <StyledImage src={this.state.image} />
@@ -202,14 +201,14 @@ class Song extends React.Component {
             onMouseEnter={this.toggleHover}
             onMouseLeave={this.toggleHover}>
             <StyledIcon
-              onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+              onClick={((e) => this.props.playSong(e, this.props.song))}>
               <BsPlayFill />
             </StyledIcon>
             <StyledImage src={this.state.image} />
             <StyledTitle>
               {this.props.song.title}
             </StyledTitle>
-            <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))} />
+            <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song))} />
             <StyledDuration>
               {this.duration()}
             </StyledDuration>
@@ -224,7 +223,7 @@ class Song extends React.Component {
           onMouseEnter={this.toggleHover}
           onMouseLeave={this.toggleHover}>
           <StyledIcon
-            onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+            onClick={((e) => this.props.playSong(e, this.props.song))}>
             <RiMusicLine />
           </StyledIcon>
           <StyledImage src={this.state.image} />
