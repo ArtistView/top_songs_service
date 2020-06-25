@@ -22,14 +22,17 @@ class TopSong extends React.Component {
       playingSong: null,
       selectedSong: null,
       songIsPaused: true,
-      audiofile: null
+      audioFile: null,
+      audioIndex: null,
+      audioList: []
     }
     this.changeSelectedSong = this.changeSelectedSong.bind(this);
     this.playSong = this.playSong.bind(this);
     this.pauseSong = this.pauseSong.bind(this);
-    if (this.state.audiofile) {
-      this.audio = new Audio(this.state.audiofile)
-    }
+  }
+
+  componentDidMount() {
+    this.props.songs.map(song => {this.state.audioList.push(song)})
   }
 
   //function called when a song is clicked
@@ -48,18 +51,25 @@ class TopSong extends React.Component {
     this.setState({
       songIsPaused: false,
       playingSong: song._id,
-      audiofile: song.mp3
+      audioFile: song.mp3,
+      audioIndex: this.state.audioList.indexOf(song)
     }, () => {
-      this.audio = new Audio(this.state.audiofile);
+      this.audio = new Audio(this.state.audioFile);
       this.audio.play();
+      this.audio.addEventListener('ended', () => {
+        if (this.state.audioIndex < 4) {
+          this.playSong(e, this.state.audioList[this.state.audioIndex + 1])
+        }
+      })
     })
   }
   //function that is called to toggle to paused state
   pauseSong() {
-    this.setState(() => ({
+    this.setState({
       songIsPaused: true
-    }))
-    this.audio.pause();
+    }, () => {
+      this.audio.pause();
+    })
   }
 
 
