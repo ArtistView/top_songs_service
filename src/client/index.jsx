@@ -2,6 +2,22 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import TopSongs from './components/topSongs.jsx';
 import App from './app.jsx'
+import styled, { css } from 'styled-components'
+
+const Title = styled.h3`
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -.36px;
+  color: white;
+`;
+
+const Wrapper = styled.section`
+  margin-left: 25px;
+  background-color: transparent;
+`;
+
+
 
 //main component rendered to DOM
 class TopFiveSongs extends React.Component {
@@ -30,18 +46,16 @@ class TopFiveSongs extends React.Component {
   render() {
     if (this.state.isLoaded) {
       return (
-        <div>
-          <h3 className="popular">Popular</h3>
+        <Wrapper>
+          <Title>Popular</Title>
           <div>
             <TopSongs songs={this.state.songs} />
           </div>
-        </div>
+        </Wrapper>
       )
     } else {
       return (
-        <div>
-          <h3>Popular</h3>
-        </div>
+        <Title>Popular</Title>
       )
     }
   }

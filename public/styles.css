@@ -1,14 +1,10 @@
 body {
-  background-color: #151515;
+  background: linear-gradient(#2c8eb8 28%, #151515 56%);;
   color: white;
   font-family: 'proxima-nova', 'Monserrat', 'Arial';
   margin: 0;
 }
 
-.h3 {
-  font-weight: 500;
-  font-size: 25px;
-}
 button {
   font-size: 100%;
   font-family: inherit;
@@ -29,29 +25,33 @@ header {
   margin: 0;
 }
 .topBar {
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 .previous {
   border-radius: 50%;
-  width: 22px;
-  height: 23px;
-  font-size: 22px;
+  width: 28px;
+  height: 30px;
+  font-size: 30px;
   margin-right: 8px;
-  font-weight: 300;
+  font-weight: 200;
+  text-indent: -3px;
+  color: white;
 }
 .next {
   border-radius: 50%;
-  width: 22px;
-  height: 23px;
-  font-size: 22px;
+  width: 28px;
+  height: 30px;
+  font-size: 30px;
   margin-left: 8px;
   opacity: 0.6;
-  font-weight: 300;
+  font-weight: 200;
+  color: white;
+  text-indent: -1px;
 }
 .user {
   text-align: center;
-  width: 22px;
-  height: 23px;
+  width: 30px;
+  height: 30px;
   margin-left: 25px;
   margin-right: 25px;
   border-radius: 50%;
@@ -59,82 +59,93 @@ header {
   float: right;
 }
 .verified {
-  font-size: 10px;
+  font-size: 11px;
+  display: inline-block;
   font-weight: 600;
   line-height: 20px;
-  vertical-align: center;
   letter-spacing: .1em;
 }
 .checkmark {
-  width: 20px;
-  vertical-align: baseline;
+  display: inline-block;
+  width: 28px;
+  vertical-align: bottom;
+}
+.verified-text {
+  vertical-align: middle;
 }
 .artist-name {
-  font-size: 60px;
+  font-size: 90px;
   font-weight: 600;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  padding-top: 5px;
 }
 .monthly {
-  font-size: 12px;
-  font-weight: 400;
-  padding-bottom: 30px;
+  font-size: 16px;
+  font-weight: 300;
+  padding-bottom: 20px;
 }
 
 .play-btn {
   text-align: center;
   background: url("https://fakespotify.s3-us-west-1.amazonaws.com/spotify-play.png") no-repeat;
-  background-size: 45px auto;
+  background-size: 53px auto;
   padding: 30px;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-left: 25px;
-  margin-right: 10px;
+  margin-right: 15px;
+}
+.play-btn:hover {
+  background-size: 55px auto;
 }
 .follow-btn {
-  padding: 5px;
-  background-color: #151515;
+  padding: 7px;
+  background-color: transparent;
   border: 1px solid darkgrey;
   color: white;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: .1em;
   border-radius: 3px;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .follow-btn:hover {
   border: 1px solid white;
 }
 .ellipsis {
-  font-size: 20px;
+  font-size: 22px;
   padding-left: 5px;
   font-family: 'Courier New', Courier, monospace;
   text-align: top;
-  letter-spacing: -.2em;
+  letter-spacing: -.15em;
 }
 
 .second-row-options {
+  margin-top: 15px;
   padding-left: 25px;
   padding-bottom: 10px;
   color: white;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .overview-btn {
   color: white;
   margin-right: 3px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 3px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .related-btn {
-  background-color: #151515;
-  margin-left: 3px;
-  margin-right: 3px;
+  background-color: transparent;
+  margin-left: 7px;
+  margin-right: 5px;
   color: white;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -144,7 +155,7 @@ header {
 }
 
 .about-btn {
-  background-color: #151515;
+  background-color: transparent;
   margin-left: 3px;
   margin-right: 3px;
   color: white;
@@ -155,45 +166,38 @@ header {
   font-weight: 530;
 }
 
-.popular {
-  margin-left: 25px;
-}
-.songWrapper {
-  line-height: 20px;
-  list-style-type: none;
-  font-size: 14px;
-  color: #b3b3b3;
-}
 
 
-.songSelected {
+
+/* .songSelected {
   background-color: #303030;
 }
 
 .songPlaying {
   color: green;
-}
+} */
 
-.song {
+/* .song {
   margin-top: 7px;
   margin-bottom: 7px;
-}
+} */
 
-.icon {
+/* .icon {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   width: 3%;
-}
-.songImage {
+} */
+
+/* .songImage {
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
   height: 30px;
   width: 33px;
   vertical-align: middle;
-}
-.songTitle {
+} */
+/* .songTitle {
   display: inline-block;
   text-align: left;
   margin-left: 5px;
@@ -205,31 +209,33 @@ header {
   float: right;
   margin-right: 20px;
   width: 10;
-}
+} */
 .song-ellipsis {
-  padding-left: 5px;
-  font-size: 10px;
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: -.2em;
   float: right;
   width: 7%;
+  vertical-align: top;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .options {
   display: inline-block;
   color: #b3b3b3;
-  margin-left: 15px;
+  max-height: 37px;
 }
 .menu {
-  margin: 2px 0 0;
-  padding: 5px 0;
+  margin: 3px 0 0;
+  padding: 8px 0;
   background-color: #282828;
 }
 .menu-item {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 1;
   min-width: 120px;
-  padding: 3px 20px;
-  line-height: 20px;
+  padding: 7px 20px;
+  line-height: 25px;
+  letter-spacing: .08em;
 }
 .menu-item:hover {
   background-color: #303030;

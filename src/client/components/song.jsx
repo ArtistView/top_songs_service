@@ -4,6 +4,62 @@ import { RiVolumeUpLine } from 'react-icons/ri';
 import { BsPlayFill } from 'react-icons/bs';
 import { BsPause } from 'react-icons/bs';
 import ShowOptions from './showOptions.jsx';
+import styled, { css } from 'styled-components'
+
+const StyledIcon = styled.a`
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+`;
+const StyledSong = styled.li`
+  margin-top: 5px;
+  margin-bottom: 5px;
+`;
+const StyledImage = styled.img`
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 48px;
+  width: 50px;
+  vertical-align: middle;
+`;
+const StyledTitle = styled.div`
+  display: inline-block;
+  text-weight: 600;
+  text-align: left;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 75%;
+`;
+const StyledDuration = styled.div`
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  width: 10;
+  max-height: 50px;
+`;
+const StyledSelected = styled.li`
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #303030;
+`;
+const StyledPlaying = styled.li`
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: green;
+`;
+const StyledSelectedPlaying = styled.li`
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: green;
+  background-color: #303030;
+`;
+
+
 //Takes in a song object, and renders all components of that song
 
 class Song extends React.Component {
@@ -14,6 +70,8 @@ class Song extends React.Component {
       image: "https://tinyurl.com/ya65klnb"
     }
     this.toggleHover = this.toggleHover.bind(this);
+
+
   }
   //when mouse over, toggle the hover function to rerender state
   toggleHover() {
@@ -31,8 +89,10 @@ class Song extends React.Component {
     return duration
   }
 
+
+
   //conditional rendering based on state of props and this
-  render () {
+  render() {
     //if this is the playing song
     if (this.props.song._id === this.props.playingSong) {
       //if this song is selected or hovered over
@@ -43,20 +103,22 @@ class Song extends React.Component {
         //show options
         if (!this.props.songIsPaused) {
           return (
-            <li className="song songSelected notPaused songPlaying">
-              <span
-                onMouseEnter={this.toggleHover}
-                onMouseLeave={this.toggleHover}>
-                <a className="icon"
+            <StyledSelectedPlaying
+              onMouseEnter={this.toggleHover}
+              onMouseLeave={this.toggleHover}>
+              <StyledIcon
                 onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
-                  <BsPause /></a>
-                  <img className="songImage" src={this.state.image} />
-                <div className="songTitle">
-                  {this.props.song.title}</div>
-                <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
-                <div className="duration">{this.duration()}</div>
-              </span>
-            </li>
+                <BsPause />
+              </StyledIcon>
+              <StyledImage src={this.state.image} />
+              <StyledTitle>
+                {this.props.song.title}
+              </StyledTitle>
+              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))} />
+              <StyledDuration>
+                {this.duration()}
+              </StyledDuration>
+            </StyledSelectedPlaying>
           )
         }
         //playing, selected, song is paused
@@ -65,20 +127,22 @@ class Song extends React.Component {
         //show options
         if (this.props.songIsPaused) {
           return (
-            <li className="song songSelected paused songPlaying">
-              <span
-                onMouseEnter={this.toggleHover}
-                onMouseLeave={this.toggleHover}>
-                <a className="icon"
-                  onClick={((e) => this.props.playSong(e, this.props.song._id))}>
-                  <BsPlayFill /></a>
-                <img className="songImage" src={this.state.image} />
-                <div className="songTitle">
-                  {this.props.song.title}</div>
-                <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
-                <div className="duration">{this.duration()}</div>
-              </span>
-            </li>
+            <StyledSelectedPlaying
+              onMouseEnter={this.toggleHover}
+              onMouseLeave={this.toggleHover}>
+              <StyledIcon
+                onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+                <BsPlayFill />
+              </StyledIcon>
+              <StyledImage src={this.state.image} />
+              <StyledTitle>
+                {this.props.song.title}
+              </StyledTitle>
+              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))} />
+              <StyledDuration>
+                {this.duration()}
+              </StyledDuration>
+            </StyledSelectedPlaying>
           )
         }
       }
@@ -87,38 +151,42 @@ class Song extends React.Component {
       //icon is the speaker/volume button
       if (!this.props.songIsPaused) {
         return (
-          <li className="song notPaused songPlaying">
-            <span
-              onMouseEnter={this.toggleHover}
-              onMouseLeave={this.toggleHover}>
-              <a className="icon"
-                onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
-                <RiVolumeUpLine /></a>
-                <img className="songImage" src={this.state.image} />
-              <div className="songTitle">
-                {this.props.song.title}</div>
-              <div className="duration">{this.duration()}</div>
-            </span>
-          </li>
+          <StyledPlaying
+            onMouseEnter={this.toggleHover}
+            onMouseLeave={this.toggleHover}>
+            <StyledIcon
+              onClick={((e) => this.props.pauseSong(e, this.props.song._id))}>
+              <RiVolumeUpLine />
+            </StyledIcon>
+            <StyledImage src={this.state.image} />
+            <StyledTitle>
+              {this.props.song.title}
+            </StyledTitle>
+            <StyledDuration>
+              {this.duration()}
+            </StyledDuration>
+          </StyledPlaying>
         )
       } else {
         //if not selected, this song is playing, but song is paused
         //on click, play the song
         //icon is music note
         return (
-          <li className="song paused songPlaying">
-            <span
-              onMouseEnter={this.toggleHover}
-              onMouseLeave={this.toggleHover}>
-              <a className="icon"
-                onClick={((e) => this.props.playSong(e, this.props.song._id))}>
-                <RiMusicLine /></a>
-                <img className="songImage" src={this.state.image} />
-              <div className="songTitle">
-                {this.props.song.title}</div>
-              <div className="duration">{this.duration()}</div>
-            </span>
-          </li>
+          <StyledPlaying
+            onMouseEnter={this.toggleHover}
+            onMouseLeave={this.toggleHover}>
+            <StyledIcon
+              onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+              <RiMusicLine />
+            </StyledIcon>
+            <StyledImage src={this.state.image} />
+            <StyledTitle>
+              {this.props.song.title}
+            </StyledTitle>
+            <StyledDuration>
+              {this.duration()}
+            </StyledDuration>
+          </StyledPlaying>
         )
       }
     } else if (this.props.song._id !== this.props.playingSong) {
@@ -130,39 +198,43 @@ class Song extends React.Component {
       //include show options
       if (this.state.hover || this.props.song._id === this.props.selectedSong) {
         return (
-          <li className="song songSelected">
-            <span
-              onMouseEnter={this.toggleHover}
-              onMouseLeave={this.toggleHover}>
-              <a className="icon"
-                onClick={((e) => this.props.playSong(e, this.props.song._id))}>
-                <BsPlayFill /></a>
-                <img className="songImage" src={this.state.image} />
-              <div className="songTitle">
-                {this.props.song.title}</div>
-              <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))}/>
-              <div className="duration">{this.duration()}</div>
-            </span>
-          </li>
+          <StyledSelected
+            onMouseEnter={this.toggleHover}
+            onMouseLeave={this.toggleHover}>
+            <StyledIcon
+              onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+              <BsPlayFill />
+            </StyledIcon>
+            <StyledImage src={this.state.image} />
+            <StyledTitle>
+              {this.props.song.title}
+            </StyledTitle>
+            <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song._id))} />
+            <StyledDuration>
+              {this.duration()}
+            </StyledDuration>
+          </StyledSelected>
         )
       }
       //not playing, not selected, all else
       //on click, play song
       //icon is music note
       return (
-        <li className="song">
-          <span
-            onMouseEnter={this.toggleHover}
-            onMouseLeave={this.toggleHover}>
-            <a className="icon"
-              onClick={((e) => this.props.playSong(e, this.props.song._id))}>
-              <RiMusicLine /></a>
-              <img className="songImage" src={this.state.image} />
-            <div className="songTitle">
-              {this.props.song.title}</div>
-            <div className="duration">{this.duration()}</div>
-          </span>
-        </li>
+        <StyledSong
+          onMouseEnter={this.toggleHover}
+          onMouseLeave={this.toggleHover}>
+          <StyledIcon
+            onClick={((e) => this.props.playSong(e, this.props.song._id))}>
+            <RiMusicLine />
+          </StyledIcon>
+          <StyledImage src={this.state.image} />
+          <StyledTitle>
+            {this.props.song.title}
+          </StyledTitle>
+          <StyledDuration>
+            {this.duration()}
+          </StyledDuration>
+        </StyledSong>
       )
     }
   }

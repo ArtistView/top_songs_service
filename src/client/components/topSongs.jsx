@@ -1,5 +1,16 @@
 import React from 'react';
 import Song from './song.jsx';
+import styled, { css } from 'styled-components';
+
+const SongWrapper = styled.span`
+  display: block;
+  line-height: 4em;
+  list-style-type: none;
+  font-size: 16px;
+  color: #b3b3b3;
+`;
+
+
 
 //takes in an array of songs, maps through them and calls song for each one
 class TopSong extends React.Component {
@@ -44,8 +55,7 @@ class TopSong extends React.Component {
       <ul>
         {this.props.songs.map(song => {
           return (
-            <span
-              className="songWrapper"
+            <SongWrapper
               onClick={((e) => this.changeSelectedSong(e, song._id))}>
             <Song
               song={song}
@@ -56,7 +66,7 @@ class TopSong extends React.Component {
               changeSelectedSong={this.changeSelectedSong}
               playSong={this.playSong}
               pauseSong={this.pauseSong}
-            /></span>
+            /></SongWrapper>
           )
         })}
       </ul>
