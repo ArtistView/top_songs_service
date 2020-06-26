@@ -14,7 +14,7 @@ button {
   background-color: #303030;
 }
 
-header {
+/* header {
   padding-left: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -23,11 +23,11 @@ header {
   background-repeat: no-repeat ;
   background-position-y: 15%;
   margin: 0;
-}
-.topBar {
+} */
+/* .topBar {
   padding-bottom: 90px;
-}
-.previous {
+} */
+/* .previous {
   border-radius: 50%;
   width: 28px;
   height: 30px;
@@ -36,8 +36,8 @@ header {
   font-weight: 200;
   text-indent: -3px;
   color: white;
-}
-.next {
+} */
+/* .next {
   border-radius: 50%;
   width: 28px;
   height: 30px;
@@ -47,8 +47,8 @@ header {
   font-weight: 200;
   color: white;
   text-indent: -1px;
-}
-.user {
+} */
+/* .user {
   text-align: center;
   width: 30px;
   height: 30px;
@@ -57,14 +57,14 @@ header {
   border-radius: 50%;
   border: 1px solid black;
   float: right;
-}
-.verified {
+} */
+/* .verified {
   font-size: 11px;
   display: inline-block;
   font-weight: 600;
   line-height: 20px;
   letter-spacing: .1em;
-}
+} */
 .checkmark {
   display: inline-block;
   width: 28px;
@@ -73,7 +73,7 @@ header {
 .verified-text {
   vertical-align: middle;
 }
-.artist-name {
+/* .artist-name {
   font-size: 90px;
   font-weight: 600;
   padding-bottom: 15px;
@@ -83,7 +83,7 @@ header {
   font-size: 16px;
   font-weight: 300;
   padding-bottom: 20px;
-}
+} */
 
 .play-btn {
   text-align: center;
@@ -123,15 +123,15 @@ header {
   letter-spacing: -.15em;
 }
 
-.second-row-options {
+/* .second-row-options {
   margin-top: 15px;
   padding-left: 25px;
   padding-bottom: 10px;
   color: white;
   font-size: 14px;
-}
+} */
 
-.overview-btn {
+/* .overview-btn {
   color: white;
   margin-right: 3px;
   padding-top: 10px;
@@ -140,9 +140,9 @@ header {
   padding-right: 15px;
   border-radius: 3px;
   font-weight: 500;
-}
+} */
 
-.related-btn {
+/* .related-btn {
   background-color: transparent;
   margin-left: 7px;
   margin-right: 5px;
@@ -152,9 +152,9 @@ header {
   padding-left: 12px;
   padding-right: 12px;
   font-weight: 530;
-}
+} */
 
-.about-btn {
+/* .about-btn {
   background-color: transparent;
   margin-left: 3px;
   margin-right: 3px;
@@ -164,7 +164,7 @@ header {
   padding-left: 12px;
   padding-right: 12px;
   font-weight: 530;
-}
+} */
 
 
 
