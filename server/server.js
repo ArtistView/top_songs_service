@@ -14,16 +14,6 @@ app.use(Express.static(path.join(__dirname, "../public")));
 const db = require('../database/database.js');
 Promise.promisifyAll(require('mongoose'));
 
-//get route for requests coming in, with songId
-app.get('/songs/:songId', (req, res) => {
-  var id = req.params.songId;
-  console.log('I got a get');
-  db.Song.find({_id: id})
-    .then((data) => {
-      res.send(data)
-    })
-})
-
 //gets the top five songs by listens
 app.get('/songs', (req, res) => {
   console.log('I got a get for top 5');
@@ -34,6 +24,17 @@ app.get('/songs', (req, res) => {
     })
     .catch((err) => console.log(err))
 })
+
+//get route for requests coming in, with songId
+app.get('/songs/:AlbumId', (req, res) => {
+  // console.log('I got a get from: ', req.params.AlbumId);.
+  db.getAlbumImage(req.params.AlbumId)
+    .then((data) => {
+      res.send(data)
+    })
+    .catch(err => console.log(err))
+})
+
 
 app.listen(PORT, (req, res) => {
   console.log('I am listening on 3000');

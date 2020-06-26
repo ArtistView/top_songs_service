@@ -58,17 +58,16 @@ const getTopFive = function() {
 //   return songs;
 // }
 
-// const getAlbumImage = function(id) {
-//   var query = Album.findById({ id });
-//   query.exec(function (err, album) {
-//     if (err) {console.log(err)};
-//     return album;
-//   })
-// }
+const getAlbumImage = function(id) {
+  var query = Album.findById(id);
+  query.select('imageUrl');
+  return query;
+}
 
 module.exports = {
   Artist: Artist,
   Album: Album,
   Song: Song,
-  getTopFive: getTopFive
+  getTopFive: getTopFive,
+  getAlbumImage: getAlbumImage
 };

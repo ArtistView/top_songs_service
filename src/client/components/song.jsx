@@ -66,11 +66,10 @@ class Song extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false,
-      image: "https://tinyurl.com/ya65klnb"
+      isLoaded: false,
+      hover: false
     }
     this.toggleHover = this.toggleHover.bind(this);
-
   }
   //when mouse over, toggle the hover function to rerender state
   toggleHover() {
@@ -78,7 +77,6 @@ class Song extends React.Component {
       hover: !this.state.hover
     })
   }
-
   //calculte duration in minutes. Database stores in seconds
   duration() {
     var seconds = (this.props.song.duration) % 60
@@ -87,8 +85,12 @@ class Song extends React.Component {
     let duration = minutes + ":" + seconds;
     return duration
   }
-
-
+  // componentDidMount() {
+  //   console.log(this.props.song.image)
+  // }
+  // componentDidUpdate() {
+  //   console.log(this.props.song.image)
+  // }
 
   //conditional rendering based on state of props and this
   render() {
@@ -109,7 +111,7 @@ class Song extends React.Component {
                 onClick={((e) => this.props.pauseSong(e, this.props.song))}>
                 <BsPause />
               </StyledIcon>
-              <StyledImage src={this.state.image} />
+              <StyledImage src={this.props.song.image} />
               <StyledTitle>
                 {this.props.song.title}
               </StyledTitle>
@@ -133,7 +135,7 @@ class Song extends React.Component {
                 onClick={((e) => this.props.playSong(e, this.props.song))}>
                 <BsPlayFill />
               </StyledIcon>
-              <StyledImage src={this.state.image} />
+              <StyledImage src={this.props.song.image} />
               <StyledTitle>
                 {this.props.song.title}
               </StyledTitle>
@@ -157,7 +159,7 @@ class Song extends React.Component {
               onClick={((e) => this.props.pauseSong(e, this.props.song))}>
               <RiVolumeUpLine />
             </StyledIcon>
-            <StyledImage src={this.state.image} />
+            <StyledImage src={this.props.song.image} />
             <StyledTitle>
               {this.props.song.title}
             </StyledTitle>
@@ -178,7 +180,7 @@ class Song extends React.Component {
               onClick={((e) => this.props.playSong(e, this.props.song))}>
               <RiMusicLine />
             </StyledIcon>
-            <StyledImage src={this.state.image} />
+            <StyledImage src={this.props.song.image} />
             <StyledTitle>
               {this.props.song.title}
             </StyledTitle>
@@ -204,7 +206,7 @@ class Song extends React.Component {
               onClick={((e) => this.props.playSong(e, this.props.song))}>
               <BsPlayFill />
             </StyledIcon>
-            <StyledImage src={this.state.image} />
+            <StyledImage src={this.props.song.image} />
             <StyledTitle>
               {this.props.song.title}
             </StyledTitle>
@@ -226,7 +228,7 @@ class Song extends React.Component {
             onClick={((e) => this.props.playSong(e, this.props.song))}>
             <RiMusicLine />
           </StyledIcon>
-          <StyledImage src={this.state.image} />
+          <StyledImage src={this.props.song.image} />
           <StyledTitle>
             {this.props.song.title}
           </StyledTitle>
@@ -237,6 +239,7 @@ class Song extends React.Component {
       )
     }
   }
+
 }
 
 

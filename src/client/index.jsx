@@ -17,8 +17,6 @@ const Wrapper = styled.section`
   background-color: transparent;
 `;
 
-
-
 //main component rendered to DOM
 class TopFiveSongs extends React.Component {
   constructor(props) {
@@ -30,17 +28,36 @@ class TopFiveSongs extends React.Component {
     }
   }
 
+  // currently works to load images but is not async
   componentDidMount() {
     fetch('/songs')
       .then (res => res.json())
+      //iterate through the songs, and fetch each image
+      .then((songs) => {
+        songs.map((song) => {
+          fetch(`/songs/${song.albumId}`)
+            .then(res => res.json())
+            //udpate the song image
+            .then((album) => song.image= album.imageUrl)
+        })
+        return songs;
+      })
       .then(songs => {
-        console.log(songs);
         this.setState({
           songs: songs,
-          isLoaded: true
+          //isLoaded: true
         })
       })
+      //waits 300 ms to finish rendering page. This is temporarily solving the async issue with fetching the songs' images
+      setTimeout( () => {
+        this.setState({
+          isLoaded: true
+        })
+      }, 300)
   }
+
+
+
 
   //places a popular header on div, and calls TopSongs with the whole array
   render() {
