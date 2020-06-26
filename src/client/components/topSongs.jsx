@@ -79,7 +79,7 @@ class TopSong extends React.Component {
         {this.props.songs.map(song => {
           return (
             <SongWrapper
-              onClick={((e) => this.changeSelectedSong(e, song._id))}>
+              onClick={((e) => this.changeSelectedSong(e, song))}>
             <Song
               song={song}
               key={song._id}
