@@ -110,8 +110,8 @@ button {
   padding-left: 12px;
   padding-right: 12px;
   margin-bottom: 12px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 8px;
+  margin-right: 15px;
 }
 .follow-btn:hover {
   border: 1px solid white;
