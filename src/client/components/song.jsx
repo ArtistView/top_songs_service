@@ -32,10 +32,18 @@ const StyledTitle = styled.div`
   vertical-align: middle;
   width: 75%;
 `;
+const StyledTitleSelected = styled.div`
+  display: inline-block;
+  text-weight: 600;
+  text-align: left;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 65%;
+`;
 const StyledDuration = styled.div`
   display: inline-block;
-  float: right;
-  margin-right: 20px;
+  text-align: right;
+  margin-right: 10px;
   width: 10;
   max-height: 50px;
 `;
@@ -112,9 +120,9 @@ class Song extends React.Component {
                 <BsPause />
               </StyledIcon>
               <StyledImage src={this.props.song.image} />
-              <StyledTitle>
+              <StyledTitleSelected>
                 {this.props.song.title}
-              </StyledTitle>
+              </StyledTitleSelected>
               <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song))} />
               <StyledDuration>
                 {this.duration()}
@@ -136,9 +144,9 @@ class Song extends React.Component {
                 <BsPlayFill />
               </StyledIcon>
               <StyledImage src={this.props.song.image} />
-              <StyledTitle>
+              <StyledTitleSelected>
                 {this.props.song.title}
-              </StyledTitle>
+              </StyledTitleSelected>
               <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song))} />
               <StyledDuration>
                 {this.duration()}
@@ -207,9 +215,9 @@ class Song extends React.Component {
               <BsPlayFill />
             </StyledIcon>
             <StyledImage src={this.props.song.image} />
-            <StyledTitle>
+            <StyledTitleSelected>
               {this.props.song.title}
-            </StyledTitle>
+            </StyledTitleSelected>
             <ShowOptions onClick={((e) => this.props.changeSlectedSong(e, this.props.song))} />
             <StyledDuration>
               {this.duration()}

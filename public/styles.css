@@ -213,16 +213,17 @@ button {
 .song-ellipsis {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: -.2em;
-  float: right;
-  width: 7%;
   vertical-align: top;
   padding-left: 30px;
   padding-right: 30px;
+  line-height: 40px;
+  color: white;
 }
 .options {
   display: inline-block;
   color: #b3b3b3;
-  max-height: 37px;
+  width: 10%;
+  font-size: 14px;
 }
 .menu {
   margin: 3px 0 0;
