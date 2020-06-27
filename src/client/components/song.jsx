@@ -77,12 +77,18 @@ class Song extends React.Component {
       isLoaded: false,
       hover: false
     }
-    this.toggleHover = this.toggleHover.bind(this);
+    this.toggleHoverOn = this.toggleHoverOn.bind(this);
+    this.toggleHoverOff = this.toggleHoverOff.bind(this);
   }
   //when mouse over, toggle the hover function to rerender state
-  toggleHover() {
+  toggleHoverOn() {
     this.setState({
-      hover: !this.state.hover
+      hover: true
+    })
+  }
+  toggleHoverOff() {
+    this.setState({
+      hover: false
     })
   }
   //calculte duration in minutes. Database stores in seconds
@@ -113,8 +119,8 @@ class Song extends React.Component {
         if (!this.props.songIsPaused) {
           return (
             <StyledSelectedPlaying
-              onMouseEnter={this.toggleHover}
-              onMouseLeave={this.toggleHover}>
+              onMouseEnter={this.toggleHoverOn}
+              onMouseLeave={this.toggleHoverOff}>
               <StyledIcon
                 onClick={((e) => this.props.pauseSong(e, this.props.song))}>
                 <BsPause />
@@ -137,8 +143,8 @@ class Song extends React.Component {
         if (this.props.songIsPaused) {
           return (
             <StyledSelectedPlaying
-              onMouseEnter={this.toggleHover}
-              onMouseLeave={this.toggleHover}>
+              onMouseEnter={this.toggleHoverOn}
+              onMouseLeave={this.toggleHoverOff}>
               <StyledIcon
                 onClick={((e) => this.props.playSong(e, this.props.song))}>
                 <BsPlayFill />
@@ -161,8 +167,8 @@ class Song extends React.Component {
       if (!this.props.songIsPaused) {
         return (
           <StyledPlaying
-            onMouseEnter={this.toggleHover}
-            onMouseLeave={this.toggleHover}>
+            onMouseEnter={this.toggleHoverOn}
+            onMouseLeave={this.toggleHoverOff}>
             <StyledIcon
               onClick={((e) => this.props.pauseSong(e, this.props.song))}>
               <RiVolumeUpLine />
@@ -182,8 +188,8 @@ class Song extends React.Component {
         //icon is music note
         return (
           <StyledPlaying
-            onMouseEnter={this.toggleHover}
-            onMouseLeave={this.toggleHover}>
+            onMouseEnter={this.toggleHoverOn}
+            onMouseLeave={this.toggleHoverOff}>
             <StyledIcon
               onClick={((e) => this.props.playSong(e, this.props.song))}>
               <RiMusicLine />
@@ -208,8 +214,8 @@ class Song extends React.Component {
       if (this.state.hover || this.props.song._id === this.props.selectedSong) {
         return (
           <StyledSelected
-            onMouseEnter={this.toggleHover}
-            onMouseLeave={this.toggleHover}>
+            onMouseEnter={this.toggleHoverOn}
+            onMouseLeave={this.toggleHoverOff}>
             <StyledIcon
               onClick={((e) => this.props.playSong(e, this.props.song))}>
               <BsPlayFill />
@@ -230,8 +236,8 @@ class Song extends React.Component {
       //icon is music note
       return (
         <StyledSong
-          onMouseEnter={this.toggleHover}
-          onMouseLeave={this.toggleHover}>
+          onMouseEnter={this.toggleHoverOn}
+          onMouseLeave={this.toggleHoverOff}>
           <StyledIcon
             onClick={((e) => this.props.playSong(e, this.props.song))}>
             <RiMusicLine />
