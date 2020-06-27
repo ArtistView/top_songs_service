@@ -12,6 +12,7 @@ const StyledIcon = styled.a`
   vertical-align: middle;
   font-size: 20px;
 `;
+
 const StyledSong = styled.li`
   margin-top: 5px;
   margin-bottom: 5px;

@@ -22,11 +22,16 @@ const TopBar = styled.div`
   padding-bottom: 90px;
 `
 const Verified = styled.div`
-  font-size: 11px;
+  font-size: 12px;
   display: inline-block;
   font-weight: 600;
   line-height: 20px;
-  letter-spacing: .1em;
+  letter-spacing: .15em;
+`
+const VerifiedText = styled.div`
+  display: inline-block;
+  vertical-align: .25em;
+  margin-left: 8px;
 `
 const Previous = styled.button`
   border-radius: 50%;
@@ -142,7 +147,7 @@ class App extends React.Component {
             <Next><RiArrowRightSLine /> </Next>
             <User> </User>
           </TopBar>
-          <Verified><img className="checkmark" src="https://fakespotify.s3-us-west-1.amazonaws.com/verified-check.png"/>    VERIFIED ARTIST</Verified>
+          <Verified><img className="checkmark" src="https://fakespotify.s3-us-west-1.amazonaws.com/verified-check.png"/><VerifiedText>    VERIFIED ARTIST</VerifiedText></Verified>
           <ArtistName>Spongebob</ArtistName>
           <Monthly>3,424,759 monthly listeners
           </Monthly>
