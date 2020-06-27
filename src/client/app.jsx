@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from 'react-contextmenu';
 import { GrCirclePlay } from 'react-icons/gr'
-import { RiArrowLeftSLine } from 'react-icons/ri';
-import { RiArrowRightSLine } from 'react-icons/ri';
+import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
 import styled, { css } from 'styled-components';
 import FastAverageColor from 'fast-average-color';
 
@@ -35,23 +35,23 @@ const VerifiedText = styled.div`
 `
 const Previous = styled.button`
   border-radius: 50%;
-  width: 28px;
+  width: 30px;
   height: 30px;
-  font-size: 30px;
+  font-size: 28px;
   margin-right: 8px;
-  font-weight: 200;
+  font-weight: 100;
   text-indent: -3px;
   color: white;
 `
 const Next = styled.button`
   border-radius: 50%;
-  width: 28px;
+  width: 30px;
   height: 30px;
-  font-size: 30px;
+  font-size: 28px;
   margin-left: 8px;
   opacity: 0.6;
   font-weight: 200;
-  text-indent: -1px;
+  text-indent: 1px;
   color: white;
 `
 const User = styled.button`
@@ -143,8 +143,8 @@ class App extends React.Component {
       <div className="artist-container">
         <Container>
           <TopBar>
-            <Previous><RiArrowLeftSLine />  </Previous>
-            <Next><RiArrowRightSLine /> </Next>
+            <Previous><IoIosArrowBack />  </Previous>
+            <Next><IoIosArrowForward /> </Next>
             <User> </User>
           </TopBar>
           <Verified><img className="checkmark" src="https://fakespotify.s3-us-west-1.amazonaws.com/verified-check.png"/><VerifiedText>    VERIFIED ARTIST</VerifiedText></Verified>
