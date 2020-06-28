@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(#004080 35%, #151515 56%);;
+  background: linear-gradient(#004080 35%, #151515 65%);;
   color: white;
   font-family: 'proxima-nova', 'Monserrat', 'Arial';
   margin: 0;
@@ -13,6 +13,7 @@ button {
   color: #b3b3b3;
   background-color: #303030;
 }
+
 
 /* header {
   padding-left: 25px;
@@ -109,8 +110,8 @@ button {
   padding-left: 12px;
   padding-right: 12px;
   margin-bottom: 12px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 8px;
+  margin-right: 15px;
 }
 .follow-btn:hover {
   border: 1px solid white;
@@ -213,16 +214,17 @@ button {
 .song-ellipsis {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: -.2em;
-  float: right;
-  width: 7%;
   vertical-align: top;
   padding-left: 30px;
   padding-right: 30px;
+  line-height: 40px;
+  color: white;
 }
 .options {
   display: inline-block;
   color: #b3b3b3;
-  max-height: 37px;
+  width: 10%;
+  font-size: 14px;
 }
 .menu {
   margin: 3px 0 0;

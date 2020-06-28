@@ -1,11 +1,11 @@
 import React from 'react';
 import Song from './song.jsx';
 import styled, { css } from 'styled-components';
-import Promise from 'bluebird'
+import Promise from 'bluebird';
+import onClickOutside from 'react-onclickoutside';
 
 const SongWrapper = styled.span`
   display: block;
-  line-height: 4em;
   list-style-type: none;
   font-size: 16px;
   color: #b3b3b3;
@@ -14,7 +14,7 @@ const SongWrapper = styled.span`
 
 
 //takes in an array of songs, maps through them and calls song for each one
-class TopSong extends React.Component {
+export class TopSongs extends React.Component {
   constructor(props) {
     super(props);
     //console.log(this.props)
@@ -29,6 +29,7 @@ class TopSong extends React.Component {
     this.changeSelectedSong = this.changeSelectedSong.bind(this);
     this.playSong = this.playSong.bind(this);
     this.pauseSong = this.pauseSong.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentDidMount() {
@@ -42,6 +43,14 @@ class TopSong extends React.Component {
       selectedSong: song._id
     }))
   }
+
+  handleClickOutside (e) {
+    console.log('I got clicked outside')
+    this.setState({
+      selectedSong: null
+    })
+  }
+
   //function that is called when the play button is clicked
   playSong(e, song) {
     //if there is currently a song playing
@@ -98,4 +107,6 @@ class TopSong extends React.Component {
 }
 
 
-export default TopSong
+
+// export default TopSongs;
+export default onClickOutside(TopSongs);
