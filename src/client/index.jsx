@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { TopSongs, onClickOutside } from './components/topSongs.jsx';
 import App from './app.jsx'
+import SideBar from './sidebar.jsx'
 import styled, { css } from 'styled-components'
 
 const Title = styled.h3`
@@ -78,6 +79,7 @@ class TopFiveSongs extends React.Component {
   }
 }
 
+ReactDom.render(<SideBar />, document.getElementById('side-bar'))
 ReactDom.render(<App />, document.getElementById('app'))
 ReactDom.render(<TopFiveSongs />, document.getElementById('topFiveSongs'))
 
