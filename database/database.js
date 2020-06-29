@@ -36,9 +36,10 @@ const songSchema = new mongoose.Schema({
   duration: Number, // in seconds
   listens: Number,
   explicit: Boolean,
-
-});
+  image: String,
+}, {strict: false});
 const Song = mongoose.model('Song', songSchema);
+
 
 //gets the top 5 songs by listens
 const getTopFive = function() {
@@ -49,18 +50,11 @@ const getTopFive = function() {
   return songs;
 }
 
-// const getImages = function(songs) {
-//   console.log('get a request for images', songs)
-//   songs.forEach(function(song) {
-//     var image = getAlbumImage(song);
-//     song.imageUrl = image.imageUrl
-//   })
-//   return songs;
-// }
-
+//get the album artwork
 const getAlbumImage = function(id) {
   var query = Album.findById(id);
-  query.select('imageUrl');
+  var image = query.select('imageUrl');
+  //console.log(image)
   return query;
 }
 
