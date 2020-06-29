@@ -15,7 +15,6 @@ const db = require('../database/database.js');
 Promise.promisifyAll(require('mongoose'));
 
 
-
 //gets the top five songs by listens
 app.get('/songs', (req, res) => {
   console.log('I got a get for top 5');
@@ -23,32 +22,33 @@ app.get('/songs', (req, res) => {
     .then((songs) => {
       //console.log('I got the images back', data)
       const imageQueries = songs.map((song) => {
-        return db.getAlbumImage(song.albumId) //take in the song.albumId)
+        //return the query for the album art
+        return db.getAlbumImage(song.albumId)
       })
       Promise.all(imageQueries)
         .then((albums) => {
           //iterate through albums
           for (var i = 0; i < albums.length; i++) {
-            //create a key in data to reference the imageUrl
+            //create a key in each song to reference the album art
             songs[i].image = albums[i].imageUrl
           }
-          // console.log('songs w/ url: ', songs[0])
-          // console.log(Object.keys(songs[0].toJSON()))
+          //once for loop ends, send back all the songs
           res.send(songs)
         })
     })
     .catch((err) => console.log(err))
 })
 
-//get route for requests coming in, with songId
-app.get('/songs/addImage', (req, res) => {
-  // console.log('I got a get from: ', req.params.AlbumId);.
-  db.getSong(req.params.SongId)
-    .then((data) => {
-      res.send(data)
-    })
-    .catch(err => console.log(err))
-})
+// Get function to initially work through returning an image url by song
+// app.get('/songs/addImage', (req, res) => {
+//   // console.log('I got a get from: ', req.params.AlbumId);.
+//   db.getSong(req.params.SongId)
+//     .then((data) => {
+//       res.send(data)
+//     })
+//     .catch(err => console.log(err))
+// })
+
 
 
 
