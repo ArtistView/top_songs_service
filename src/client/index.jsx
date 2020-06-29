@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { TopSongs, onClickOutside } from './components/topSongs.jsx';
+import TopSongs from './components/topSongs.jsx';
 import App from './app.jsx'
 import SideBar from './sidebar.jsx'
 import styled, { css } from 'styled-components'
