@@ -54,7 +54,7 @@ class TopFiveSongs extends React.Component {
         this.setState({
           isLoaded: true
         })
-      }, 300)
+      }, 450)
   }
 
 
