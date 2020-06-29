@@ -17,11 +17,14 @@ const SideBarStyle = styled.div`
   padding-top: 20px;
   color: #b3b3b3
 `
-const SpotifyLogo = styled.div`
-  margin-left: 20px;
+const SpotifyLogo = styled.img`
   margin-bottom: 15px;
+  padding-top: 5px;
+  padding-left: 22px;
   font-size: 40px;
   color: white;
+  height: 40px;
+  width: auto;
 `
 const MainList = styled.ul`
   padding-left: 22px;
@@ -117,9 +120,7 @@ const SideBar = () => {
 
   return(
     <SideBarStyle>
-      <SpotifyLogo>
-        <FaSpotify /> spotify
-      </SpotifyLogo>
+      <SpotifyLogo src="https://fakespotify.s3-us-west-1.amazonaws.com/Spotify_Logo_CMYK_White.png"/>
       <MainList>
         <MainListItem>
           <RiHome4Line />
