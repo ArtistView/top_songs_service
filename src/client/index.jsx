@@ -23,7 +23,7 @@ class TopFiveSongs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //an array of songs, currently referencing above array
+      //an array of songs
       songs: [],
       isLoaded: false
     }
@@ -33,28 +33,13 @@ class TopFiveSongs extends React.Component {
   componentDidMount() {
     fetch('/songs')
       .then (res => res.json())
-      //iterate through the songs, and fetch each image
-      .then((songs) => {
-        songs.map((song) => {
-          fetch(`/songs/${song.albumId}`)
-            .then(res => res.json())
-            //udpate the song image
-            .then((album) => song.image= album.imageUrl)
-        })
-        return songs;
-      })
       .then(songs => {
+        console.log(songs)
         this.setState({
           songs: songs,
-          //isLoaded: true
-        })
-      })
-      //waits 300 ms to finish rendering page. This is temporarily solving the async issue with fetching the songs' images
-      setTimeout( () => {
-        this.setState({
           isLoaded: true
         })
-      }, 300)
+      })
   }
 
 

@@ -14,26 +14,42 @@ app.use(Express.static(path.join(__dirname, "../public")));
 const db = require('../database/database.js');
 Promise.promisifyAll(require('mongoose'));
 
+
+
 //gets the top five songs by listens
 app.get('/songs', (req, res) => {
   console.log('I got a get for top 5');
   db.getTopFive()
-    .then((data) => {
+    .then((songs) => {
       //console.log('I got the images back', data)
-      res.send(data)
+      const imageQueries = songs.map((song) => {
+        return db.getAlbumImage(song.albumId) //take in the song.albumId)
+      })
+      Promise.all(imageQueries)
+        .then((albums) => {
+          //iterate through albums
+          for (var i = 0; i < albums.length; i++) {
+            //create a key in data to reference the imageUrl
+            songs[i].image = albums[i].imageUrl
+          }
+          // console.log('songs w/ url: ', songs[0])
+          // console.log(Object.keys(songs[0].toJSON()))
+          res.send(songs)
+        })
     })
     .catch((err) => console.log(err))
 })
 
 //get route for requests coming in, with songId
-app.get('/songs/:AlbumId', (req, res) => {
+app.get('/songs/addImage', (req, res) => {
   // console.log('I got a get from: ', req.params.AlbumId);.
-  db.getAlbumImage(req.params.AlbumId)
+  db.getSong(req.params.SongId)
     .then((data) => {
       res.send(data)
     })
     .catch(err => console.log(err))
 })
+
 
 
 app.listen(PORT, (req, res) => {
