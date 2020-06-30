@@ -14,8 +14,8 @@ const StyledIcon = styled.a`
 `;
 
 const StyledSong = styled.li`
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 `;
 const StyledImage = styled.img`
   display: inline-block;
@@ -50,20 +50,20 @@ const StyledDuration = styled.div`
 `;
 const StyledSelected = styled.li`
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #303030;
 `;
 const StyledPlaying = styled.li`
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: green;
 `;
 const StyledSelectedPlaying = styled.li`
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: green;
   background-color: #303030;
 `;
