@@ -14,7 +14,7 @@ import Index from '../client/index.jsx';
 //testing to make sure the popular heading is listed
 describe("Index", () => {
   test('Main component renders', () => {
-    const wrapper = shallow(<TopFiveSongs />)
+    const wrapper = shallow(<topFiveSongs />)
     expect(wrapper.find('h3').text()).toContain("Popular")
   });
 
