@@ -10,6 +10,10 @@ const SongWrapper = styled.span`
   font-size: 16px;
   color: #b3b3b3;
 `;
+const UnorderedList = styled.ul`
+  padding-left: 0px;
+  padding-right: 40px;
+`
 
 
 
@@ -92,7 +96,7 @@ class TopSongs extends React.Component {
 
   render () {
     return (
-      <ul>
+      <UnorderedList>
         {this.props.songs.map(song => {
           return (
             <SongWrapper
@@ -109,7 +113,7 @@ class TopSongs extends React.Component {
             /></SongWrapper>
           )
         })}
-      </ul>
+      </UnorderedList>
     )
   }
 }
