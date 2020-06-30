@@ -11,15 +11,16 @@ const StyledIcon = styled.a`
   text-align: center;
   vertical-align: middle;
   font-size: 20px;
+  padding-left: 15px;
 `;
 
 const StyledSong = styled.li`
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 `;
 const StyledImage = styled.img`
   display: inline-block;
-  margin-left: 5px;
+  margin-left: 12px;
   margin-right: 5px;
   height: 48px;
   width: 50px;
@@ -29,41 +30,40 @@ const StyledTitle = styled.div`
   display: inline-block;
   text-weight: 600;
   text-align: left;
-  margin-left: 5px;
+  margin-left: 10px;
   vertical-align: middle;
-  width: 75%;
+  width: 80%;
 `;
 const StyledTitleSelected = styled.div`
   display: inline-block;
   text-weight: 600;
   text-align: left;
-  margin-left: 5px;
+  margin-left: 10px;
   vertical-align: middle;
-  width: 65%;
+  width: 70%;
 `;
 const StyledDuration = styled.div`
   display: inline-block;
   text-align: right;
-  margin-right: 10px;
   width: 10;
   max-height: 50px;
 `;
 const StyledSelected = styled.li`
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #303030;
 `;
 const StyledPlaying = styled.li`
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: green;
 `;
 const StyledSelectedPlaying = styled.li`
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: green;
   background-color: #303030;
 `;
