@@ -17,6 +17,7 @@ const Container = styled.header`
   background-repeat: no-repeat ;
   background-position-y: 15%;
   margin: 0;
+  height: 340px;
 `
 const TopBar = styled.div`
   padding-bottom: 90px;
@@ -27,6 +28,7 @@ const Verified = styled.div`
   font-weight: 600;
   line-height: 20px;
   letter-spacing: .15em;
+  padding-bottom: 20px;
 `
 const VerifiedText = styled.div`
   display: inline-block;
@@ -34,28 +36,34 @@ const VerifiedText = styled.div`
   margin-left: 8px;
 `
 const Previous = styled.button`
+  border: 0;
+  background-color: #303030;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   font-size: 28px;
   margin-right: 8px;
   font-weight: 100;
-  text-indent: -3px;
+  text-indent: -5px;
   color: white;
 `
 const Next = styled.button`
   border-radius: 50%;
+  background-color: #303030;
+  border: 0;
   width: 30px;
   height: 30px;
   font-size: 28px;
   margin-left: 8px;
   opacity: 0.6;
   font-weight: 200;
-  text-indent: 1px;
+  text-indent: -.1em;
   color: white;
 `
 const User = styled.button`
   text-align: center;
+  background-color: #303030;
+  border: 0;
   width: 30px;
   height: 30px;
   margin-left: 25px;
@@ -67,33 +75,37 @@ const User = styled.button`
 const ArtistName = styled.div`
   font-size: 90px;
   font-weight: 600;
-  padding-bottom: 15px;
-  padding-top: 5px;
+  padding-bottom: 55px;
+  padding-top: 25px;
 `
 const Monthly = styled.div`
   font-size: 16px;
   font-weight: 300;
-  padding-bottom: 20px;
+`
+const FirstRow = styled.div`
+  padding-top: 10px;
 `
 const SecondRow = styled.div`
-  margin-top: 15px;
+  margin-top: 18px;
   padding-left: 25px;
-  padding-bottom: 10px;
   color: white;
   font-size: 14px;
 `
 const Overview = styled.button`
   color: white;
+  border: 0;
+  background-color: #303030;
   margin-right: 3px;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 3px;
+  padding-left: 17px;
+  padding-right: 17px;
+  border-radius: 5px;
   font-weight: 500;
 `
 const Related = styled.button`
   background-color: transparent;
+  border: 0;
   margin-left: 7px;
   margin-right: 5px;
   color: white;
@@ -105,6 +117,7 @@ const Related = styled.button`
 `
 const About = styled.button`
   background-color: transparent;
+  border: 0;
   margin-left: 3px;
   margin-right: 3px;
   color: white;
@@ -152,21 +165,21 @@ class App extends React.Component {
           <Monthly>3,424,759 monthly listeners
           </Monthly>
         </Container>
-        <div className="first-row-options">
-          <button className="play-btn">  </button>
-          <button className="follow-btn" onClick={this.follow}>{this.state.following}</button>
-          <div className="options">
+        <FirstRow>
+          <button className="artist-play-btn">  </button>
+          <button className="artist-follow-btn" onClick={this.follow}>{this.state.following}</button>
+          <div className="artist-options">
             <ContextMenuTrigger id="artist-show-options" holdToDisplay={1}>
               <div className="ellipsis">...</div>
             </ContextMenuTrigger>
-            <ContextMenu id="artist-show-options" className="menu">
-              <MenuItem className="menu-item">Start Radio</MenuItem>
-              <MenuItem className="menu-item">Follow</MenuItem>
-              <MenuItem className="menu-item">Copy Artist Link</MenuItem>
-              <MenuItem className="menu-item">Open in Desktop app</MenuItem>
+            <ContextMenu id="artist-show-options" className="artist-menu">
+              <MenuItem className="artist-menu-item">Start Radio</MenuItem>
+              <MenuItem className="artist-menu-item">Follow</MenuItem>
+              <MenuItem className="artist-menu-item">Copy Artist Link</MenuItem>
+              <MenuItem className="artist-menu-item">Open in Desktop app</MenuItem>
             </ContextMenu>
           </div>
-        </div>
+        </FirstRow>
         <SecondRow>
           <Overview>Overview</Overview>
           <Related>Related Artists</Related>

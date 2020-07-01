@@ -99,7 +99,7 @@ class TopSongs extends React.Component {
       <UnorderedList>
         {this.props.songs.map(song => {
           return (
-            <SongWrapper
+            <SongWrapper id="song-wrapper-test"
               onClick={((e) => this.changeSelectedSong(e, song))}>
             <Song
               song={song}

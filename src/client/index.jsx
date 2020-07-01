@@ -31,10 +31,10 @@ class TopFiveSongs extends React.Component {
 
   // currently works to load images but is not async
   componentDidMount() {
-    fetch('/songs')
+    fetch("http://localhost:3000/songs")
       .then (res => res.json())
       .then(songs => {
-        console.log(songs)
+        //console.log(songs)
         this.setState({
           songs: songs,
           isLoaded: true
