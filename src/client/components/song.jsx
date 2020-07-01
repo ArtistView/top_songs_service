@@ -33,6 +33,7 @@ const StyledTitle = styled.div`
   margin-left: 10px;
   vertical-align: middle;
   width: 80%;
+
 `;
 const StyledTitleSelected = styled.div`
   display: inline-block;
