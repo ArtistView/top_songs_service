@@ -64,8 +64,5 @@ class TopFiveSongs extends React.Component {
   }
 }
 
-ReactDom.render(<SideBar />, document.getElementById('side-bar'))
-ReactDom.render(<App />, document.getElementById('app'))
-ReactDom.render(<TopFiveSongs />, document.getElementById('topFiveSongs'))
 
 export default TopFiveSongs

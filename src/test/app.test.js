@@ -9,13 +9,11 @@ import renderer from 'react-test-renderer';
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import App from '../client/app.jsx';
 
-describe("Index", () => {
-  test('Main component renders', () => {
-    const wrapper = shallow(<app />)
-    // expect(wrapper.find('h3').text()).toContain("Popular")
-  });
-
+it('Testing to see if Jest works', () => {
+  expect(1).toBe(1)
 })
+
+
 
 //Test to make sure app is rendering to app
 

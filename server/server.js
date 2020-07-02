@@ -49,8 +49,8 @@ app.get('/songs', (req, res) => {
 // })
 
 
-
-
 app.listen(PORT, (req, res) => {
   console.log('I am listening on 3000');
 })
+
+module.exports = app

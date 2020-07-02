@@ -5,6 +5,10 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import TopSongs from '../../client/components/topSongs.jsx';
 
+
+it('Testing to see if Jest works', () => {
+  expect(1).toBe(1)
+})
 //test audio list has 5 songs
 
 //test first song is the first song in list
