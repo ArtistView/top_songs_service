@@ -2,13 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
-import { mount } from 'enzyme';
+import Enzyme, { shallow, render, mount } from 'enzyme';
 import TopSongs from '../../client/components/topSongs.jsx';
+//import {fetch} from 'whatwg-fetch';
 
+describe('TopSongs', () => {
+  const wrapper = shallow(<TopSongs />);
 
-it('Testing to see if Jest works', () => {
-  expect(1).toBe(1)
+  it('TopSongs renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+  it('Receives an array of 5 songs', () => {
+    expect(wrapper).props(songs).length.toBe(5)
+  })
 })
+
 //test audio list has 5 songs
 
 //test first song is the first song in list
