@@ -15,8 +15,7 @@ it('Testing to see if Jest works', () => {
 
 
 
-//Test to make sure app is rendering to app
+//Test to make sure app is rendering to app - shallow test w/ snapshot
 
 //Test to make sure the follow button toggles the state
 
-//test context menu??

@@ -47,7 +47,9 @@ app.get('/songs', (req, res) => {
 //     })
 //     .catch(err => console.log(err))
 // })
-
+app.get('/test', async (req, res) => {
+  await res.json({message: 'pass!'})
+})
 
 app.listen(PORT, (req, res) => {
   console.log('I am listening on 3000');
