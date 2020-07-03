@@ -2,24 +2,25 @@
  * @jest-environment jsdom
  */
 
-
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
 import Enzyme, { shallow, render, mount } from 'enzyme';
-import Index from '../client/index.jsx';
+import TopFive from '../client/index.jsx';
+import {fetch} from 'whatwg-fetch';
 
-//testing to make sure the popular heading is listed
-describe("Index", () => {
-  test('Main component renders', () => {
-    const wrapper = shallow(<topFiveSongs />)
-    expect(wrapper.find('h3').text()).toContain("Popular")
-  });
+// it('Testing to see if Jest works', () => {
+//   expect(1).toBe(1)
+// })
+describe('TopFive', () => {
+  const wrapper = shallow(<TopFive />);
 
+  it('Index renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+  it('Has an array in the state', () => {
+    expect(Array.isArray(wrapper.state('songs'))).toBe(true)
+  })
 })
 
-//test to make sure the songs array in state has 5 songs
-
-//test to make sure the render is not happening if the songs array is still empty

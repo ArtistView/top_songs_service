@@ -31,10 +31,11 @@ class TopFiveSongs extends React.Component {
 
   // currently works to load images but is not async
   componentDidMount() {
+    //console.log('Component Did Mount')
     fetch("http://localhost:3000/songs")
       .then (res => res.json())
       .then(songs => {
-        //console.log(songs)
+        console.log(songs)
         this.setState({
           songs: songs,
           isLoaded: true
@@ -64,8 +65,5 @@ class TopFiveSongs extends React.Component {
   }
 }
 
-ReactDom.render(<SideBar />, document.getElementById('side-bar'))
-ReactDom.render(<App />, document.getElementById('app'))
-ReactDom.render(<TopFiveSongs />, document.getElementById('topFiveSongs'))
 
 export default TopFiveSongs

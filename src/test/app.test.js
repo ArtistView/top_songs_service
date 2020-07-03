@@ -8,17 +8,22 @@ import renderer from 'react-test-renderer';
 
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import App from '../client/app.jsx';
+import {fetch} from 'whatwg-fetch';
 
-describe("Index", () => {
-  test('Main component renders', () => {
-    const wrapper = shallow(<app />)
-    // expect(wrapper.find('h3').text()).toContain("Popular")
-  });
+// it('Testing to see if Jest works', () => {
+//   expect(1).toBe(1)
+// })
+describe('Main App', () => {
+  const wrapper = shallow(<App />);
 
+  it('App renders correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+  it('Changes state to Following when follow button is clicked', () => {
+    expect(wrapper.state('following')).toBe('FOLLOW')
+    // wrapper.find('artist-follow-btn').click()
+
+    // expect(wrapper.state('following')).toBe('FOLLOWING')
+  })
 })
 
-//Test to make sure app is rendering to app
-
-//Test to make sure the follow button toggles the state
-
-//test context menu??

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const Promise = require('bluebird');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -49,8 +49,8 @@ app.get('/songs', (req, res) => {
 // })
 
 
-
-
 app.listen(PORT, (req, res) => {
-  console.log('I am listening on 3000');
+  console.log(`I am listening on ${PORT}`);
 })
+
+module.exports = app

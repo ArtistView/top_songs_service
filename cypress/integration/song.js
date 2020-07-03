@@ -15,30 +15,30 @@ describe('Testing clicks on a song', () => {
   it('Should have a selected song when clicked', () => {
     cy.get('#song').click()
     cy.get('#song-selected').should('exist')
-    cy.get('.play-btn').click()
+    cy.get('.artist-play-btn').click()
   })
   it('Should hear a click somewhere else and deselect song', () => {
     cy.get('#song').click()
     cy.get('#song-selected').should('exist')
-    cy.get('.play-btn').click()
+    cy.get('.artist-play-btn').click()
     cy.get('#song-selected').should('not.exist')
   })
   it('When a song is selected, others are not', () => {
     cy.get('#song').click()
     cy.get('#song-selected').should('exist')
     cy.get('#song').should('exist')
-    cy.get('.play-btn').click()
+    cy.get('.artist-play-btn').click()
   })
   it('Should show options ellipsis when clicked', () => {
     cy.get('#song').click()
     cy.get('.song-ellipsis').should('exist')
-    cy.get('.play-btn').click()
+    cy.get('.artist-play-btn').click()
   })
   it('Should change icon when clicked', () => {
     let selectedIcon = cy.get('#song').click().get('.test-icon')
     let unselectedIcon = cy.get('#song').get('.test-icon')
     expect(selectedIcon).to.not.equal(unselectedIcon)
-    cy.get('.play-btn').click()
+    cy.get('.artist-play-btn').click()
   })
   it('Should change icon when playing', () => {
     let selectedIcon = cy.get('#song').click().get('.test-icon-selected')
