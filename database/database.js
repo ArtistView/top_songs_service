@@ -41,8 +41,8 @@ const Song = mongoose.model('Song', songSchema);
 
 
 //gets the top 5 songs by listens
-const getTopFive = function() {
-  var songs = Song.find().lean();
+const getTopFive = function(artist) {
+  var songs = Song.find({ artistId: artist }).lean();
   songs.sort({listens: 'desc'});
   songs.limit(5);
   //songs = getImages(songs);

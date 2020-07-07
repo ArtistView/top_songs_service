@@ -15,9 +15,9 @@ const db = require('../database/database.js');
 Promise.promisifyAll(require('mongoose'));
 
 //gets the top five songs by listens
-app.get('/songs', (req, res) => {
-  console.log('I got a get for top 5');
-  db.getTopFive()
+app.get('/:artistId', (req, res) => {
+  console.log('I got a get for artist: ', req.params.artistId);
+  db.getTopFive(req.params.artistId)
     .then((songs) => {
       //console.log('I got the images back', data)
       const imageQueries = songs.map((song) => {

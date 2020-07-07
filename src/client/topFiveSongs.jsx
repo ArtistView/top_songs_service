@@ -31,8 +31,8 @@ class TopFiveSongs extends React.Component {
 
   // currently works to load images but is not async
   componentDidMount() {
-    //console.log('Component Did Mount')
-    fetch("http://localhost:3000/songs")
+    // artist ID goes here, currently staticly rendering one artist
+    fetch("http://localhost:3000/5eebe7b2c451ef0e3f4c0501")
       .then (res => res.json())
       .then(songs => {
         console.log(songs)
