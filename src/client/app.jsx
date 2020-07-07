@@ -6,6 +6,7 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 import styled, { css } from 'styled-components';
 import FastAverageColor from 'fast-average-color';
+import { FaCheck, FaPlayCircle } from 'react-icons/fa';
 
 
 const Container = styled.header`
@@ -29,6 +30,14 @@ const Verified = styled.div`
   line-height: 20px;
   letter-spacing: .15em;
   padding-bottom: 20px;
+`
+const CheckMark = styled.button`
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #557ef6;
+  border: 0;
+  color: white;
 `
 const VerifiedText = styled.div`
   display: inline-block;
@@ -84,6 +93,19 @@ const Monthly = styled.div`
 `
 const FirstRow = styled.div`
   padding-top: 10px;
+  height: 80px;
+`
+const ArtistPlay = styled.button`
+  height: 53px;
+  width: 53px;
+  font-size: 55px;
+  text-align: center;
+  margin-left: 25px;
+  margin-right: 15px;
+  color: green;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0;
 `
 const SecondRow = styled.div`
   margin-top: 18px;
@@ -160,13 +182,13 @@ class App extends React.Component {
             <Next><IoIosArrowForward /> </Next>
             <User> </User>
           </TopBar>
-          <Verified><img className="checkmark" src="https://fakespotify.s3-us-west-1.amazonaws.com/verified-check.png"/><VerifiedText>    VERIFIED ARTIST</VerifiedText></Verified>
+          <Verified><CheckMark> <FaCheck /> </CheckMark><VerifiedText>    VERIFIED ARTIST</VerifiedText></Verified>
           <ArtistName>Spongebob</ArtistName>
           <Monthly>3,424,759 monthly listeners
           </Monthly>
         </Container>
         <FirstRow>
-          <button className="artist-play-btn">  </button>
+          <ArtistPlay> <FaPlayCircle /> </ArtistPlay>
           <button className="artist-follow-btn" onClick={this.follow}>{this.state.following}</button>
           <div className="artist-options">
             <ContextMenuTrigger id="artist-show-options" holdToDisplay={1}>

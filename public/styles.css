@@ -17,47 +17,22 @@ body {
 }
 
 
-.checkmark {
-  display: inline-block;
-  width: 28px;
-  vertical-align: bottom;
-}
-
-
-.artist-play-btn {
-  border: 0;
-  font-size: 100%;
-  font-family: inherit;
-  color: #b3b3b3;
-  text-align: center;
-  background: url("https://fakespotify.s3-us-west-1.amazonaws.com/spotify-play.png") no-repeat;
-  background-size: 53px auto;
-  padding: 30px;
-  margin-top: 20px;
-  margin-left: 25px;
-  margin-right: 15px;
-}
-.artist-play-btn:hover {
-  background-size: 55px auto;
-}
 .artist-follow-btn {
   font-size: 100%;
   font-family: inherit;
-  padding-left: 9px;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-right: 9px;
   background-color: transparent;
   border: 1px solid darkgrey;
   color: white;
-  text-align: center;
   font-size: 12px;
   letter-spacing: .1em;
   border-radius: 3px;
   padding-left: 12px;
   padding-right: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   margin-left: 8px;
+  margin-top: -10px;
   margin-right: 15px;
 }
 .artist-follow-btn:hover {

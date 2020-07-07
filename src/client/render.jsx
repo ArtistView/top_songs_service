@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import TopFiveSongs from './index.jsx';
+import TopFiveSongs from './topFiveSongs.jsx';
 import App from './app.jsx'
 import SideBar from './sidebar.jsx'
 
