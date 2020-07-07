@@ -19,11 +19,5 @@ describe('Main App', () => {
   it('App renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
-  it('Changes state to Following when follow button is clicked', () => {
-    expect(wrapper.state('following')).toBe('FOLLOW')
-    // wrapper.find('artist-follow-btn').click()
-
-    // expect(wrapper.state('following')).toBe('FOLLOWING')
-  })
 })
 

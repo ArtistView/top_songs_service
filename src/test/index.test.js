@@ -10,9 +10,6 @@ import Enzyme, { shallow, render, mount } from 'enzyme';
 import TopFive from '../client/index.jsx';
 import {fetch} from 'whatwg-fetch';
 
-// it('Testing to see if Jest works', () => {
-//   expect(1).toBe(1)
-// })
 describe('TopFive', () => {
   const wrapper = shallow(<TopFive />);
 

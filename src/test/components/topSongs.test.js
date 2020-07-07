@@ -1,4 +1,4 @@
-const props = {
+let props = {
   songs: [
     {
         "_id": "5eebfe07a386ca12ede16e57",
@@ -73,6 +73,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
 import Enzyme, { shallow, render, mount } from 'enzyme';
+import sinon from 'sinon'
 import TopSongs from '../../client/components/topSongs.jsx';
 //import {fetch} from 'whatwg-fetch';
 
@@ -83,11 +84,26 @@ describe('TopSongs', () => {
   it('TopSongs renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
-  it('Receives an array of 5 songs', () => {
-    expect(wrapper).props().length.toBe(5)
-  })
+  // it('Has an audioList in the state', () => {
+  //   expect(Array.isArray(wrapper.state('audioList'))).toBe(true)
+  // })
 })
+// describe('Rendering', () => {
+//   beforeEach(() => {
+//     props = {
+//       songs: (songs) => [],
+//       audioList: []
+//     }
+//     songs = sinon.stub(props, 'songs')
+//   })
 
+//   it('ComponentDidMount', () => {
+//     let asyncWrapper = shallow(<TopSongs {...props} />)
+
+//     expect(asyncWrapper.state('audioList').length).toBe(5)
+//   })
+
+// })
 //test audio list has 5 songs
 
 //test first song is the first song in list
